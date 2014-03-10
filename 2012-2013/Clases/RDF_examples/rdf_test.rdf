@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:people="http://www.oeg-upm.net/ontologies/people#"
+    xmlns="http://www.oeg-upm.net/ontologies/people#"
+    xml:base="http://www.oeg-upm.net/ontologies/people">
+ 
+    <rdf:Property rdf:about="http://www.oeg-upm.net/ontologies/people#hasHomePage"/>
+    <rdf:Property rdf:about="http://www.oeg-upm.net/ontologies/people#hasColleague"/>
+    <rdf:Property rdf:about="http://www.oeg-upm.net/ontologies/people#hasName"/>
+ 
+    <rdf:Description rdf:about="#Raul"/>
+    <rdf:Description rdf:about="#Asun">
+        <people:hasColleague rdf:resource="#Raul"/>
+        <people:hasHomePage rdf:resource="http://www.fi.upm.es/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Oscar">
+        <people:hasColleague rdf:resource="#Asun"/>
+        <people:hasName>Oscar Corcho García</people:hasName>
+    </rdf:Description>
+ 
+</rdf:RDF>
