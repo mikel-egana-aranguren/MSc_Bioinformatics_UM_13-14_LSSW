@@ -1,0 +1,12 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:lsldREL="http://cbgp.upm.es/lsld.rdf#" 
+    xml:base="http://cbgp.upm.es/lsld"> 
+    
+    <rdf:Description rdf:about="#prot_b"/>
+    <rdf:Description rdf:about="#cell_cycle"/>
+    <rdf:Description rdf:about="#prot_a">
+      <lsldREL:participates_in rdf:resource="#cell_cycle"/>
+      <lsldREL:interacts_with rdf:resource="#prot_b"/>
+    </rdf:Description>
+</rdf:RDF>
