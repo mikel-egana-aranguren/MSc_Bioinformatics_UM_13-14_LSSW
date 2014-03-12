@@ -1,1 +1,385 @@
-test
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Mikel Egaña Aranguren" >
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+<!-- 		<link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+		<section>
+			<section>
+				<br>
+				<h2>Life Sciences Semantic Web (LSSW)</h2>
+				<br>
+				<h3>Máster Bioinformática UM (2013-2014)</h3>
+				<br>
+				<p>
+					<small>Mikel Egaña Aranguren</small><br>
+					<small><a href="http://mikeleganaaranguren.com/">http://mikeleganaaranguren.com</a> / <a href="mailto:mikel.egana.aranguren@gmail.com">mikel.egana.aranguren@gmail.com</a></small><br>
+				</p>
+			</section>
+			<section>
+				<br>
+				<h2>Life Sciences Semantic Web (LSSW)</h2>
+				<br>
+				<br>
+				<p align="left"><a href="http://mikeleganaaranguren.wordpress.com/teaching/">http://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
+				<p align="left"><a href="http://mikel-egana-aranguren.github.io/MSc_Bioinformatics_UM_13-14_LSSW/index.html">Versión HTML de esta presentación</a></small></p><br>
+				<p align="left"><a href="http://github.com/mikel-egana-aranguren/MSc_Bioinformatics_UM_13-14_LSSW">Todo el material (Presentación, ejercicios, datos, código) en GitHub</a></small></p><br>
+				<br><br>
+				<img  src="by-nc-sa.eu_petit.png" alt="by-nc-sa">
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Life Sciences Semantic Web</h2>
+			</section>
+			<section>
+				<h3>Life Sciences Semantic Web</h3>
+				<br/>
+				<img  src="SW_Mark.png" alt="SW_Mark.png">
+			</section>
+			<section>
+				<h3>Pila tecnologías Web Semántica</h3>
+				<br/>
+				<img  src="SW_stack.png" alt="SW_stack.png">
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Ontologías</h2>
+			</section>
+			<section>
+				<h3>ONTO-PERL</h3>
+				<br>
+				<p align="left">API para trabajar con ontologías OBO (y OWL) en Perl</p><br>
+				<p align="left"><a href="http://search.cpan.org/dist/ONTO-PERL/">http://search.cpan.org/dist/ONTO-PERL/</a></p><br>
+				<p align="left"><a href="http://cpansearch.perl.org/src/EASR/ONTO-PERL-1.41/doc//">Ejemplos</a></p><br>
+			</section>
+			<section>
+				<h3>ONTO-PERL: Ejercicio 2</h3>
+				<br>
+				<p align="left">Crear un script usando ONTO-PERL que devuleva los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology</p><br>
+				<p align="left">Usar los archivos gene_association.tair y go.obo</p><br>
+				
+				
+				
+			</section>
+			<section>
+				<h3>Ontologias + Galaxy</h3>
+				<br>
+				<p align="left">onto-toolkit, ncbo, oppl, sadi</p><br>
+
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Linked Data</h2>
+			</section>
+			<section>
+				<h3>Video divulgativo</h3>
+				<br/>
+				<p>
+				<iframe src="linked_data_1280x720.webm" width="750" height="421" frameborder="0"></iframe>
+				</p>	 
+			</section>
+			<section>
+				<h3>¿Qué es Linked Data (LD)?</h3>
+				<br>
+				<p align="left">Un método para ofrecer datos directamente en la web</p><br>
+				<p align="left">Una propuesta del <a href="http://www.w3.org">W3C</a>: 
+				<a href="http://www.w3.org/standards/semanticweb/data">http://www.w3.org/standards/semanticweb/data</a></p><br>
+			</section>
+			<section>
+				<h3>Un primer paso hacia la Web Semántica</h3>
+				<br/>
+					<p align="left">LD utiliza la tecnología <i>ya existente</i> (URI, HTTP, ...) 
+						para ofrecer una primera versión de la Web Semántica</p>
+			</section>
+			<section>
+			<h3>Pila tecnologías Web Semántica y LD</h3>
+				<br/>
+				<img src="semantic_web_technology_stack_small.png">
+				<p align="right"><small><a href="http://bnode.org/blog/2009/07/08/the-semantic-web-not-a-piece-of-cake">BNODE</a></small></p>
+			</section>
+			<section>
+						<h2>Principios LD</h2>
+						<br/>
+						<ol>
+							<li>Usar URIs para identificar entidades</li>
+							<li>Usar URIs HTTP para que se pueda acceder a esas entidades</li>
+							<li>Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
+							<li>Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
+						</ol>
+						<br/><br/>
+						<small><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></small><br>
+			</section>
+					
+			<section>
+						<h3>Con LD publicamos datos de manera ... </h3>
+						<br/>
+						<h3>... semántica</h3>
+						<br/>
+						<h3>... enlazada </h3>
+			</section>
+			<section>
+						<h3>Semántica</h3>
+						<br/>
+						<p align="left">RDF ofrece el triple, un modelo de datos explícito y homogéneo: una "frase" estándar que los ordenadores pueden "entender"</p>
+						<br/>
+						
+							<img width="600" height="300" src="Triple.png" alt="Triple.png">
+						
+			</section>
+			<section>
+						<h3>Enlaces</h3>
+						<br/>
+						<p align="left">En el triple, cada entidad (sujeto, predicado, objeto) tiene una URI que lo identifica</p>
+						<p align="left">Los datos son enlazados a otros datos a través de la web, con enlaces explícitos</p>
+						<br/>
+						
+							<img src="Links.png" alt="Links.png">
+						
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br/>
+						<img  src="Red.png" alt="Red.png">
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br>
+												
+						<p align="left">Internet de datos, en vez de documentos: "Base de Datos universal":<br>
+								<ul>
+										<li>Es más fácil construir aplicaciones que exploten los datos, incluyendo razonamiento automático</li>
+										<li>Encontramos justo lo que buscamos: consultas directas (SPARQL) en vez de procesar texto</li>										
+								</ul>					
+						</p>
+			</section>
+					
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br><br>
+						<p align="left">Navegamos directamente por las datos (RDF), en vez de navegar a través de documentos que representan esos datos en lenguaje natural (HTML)</p><br>
+						<p align="left">Enlazar datos nuevos es tan fácil como enlazar páginas web: crecimiento orgánico de la red</p>
+			</section>	
+			<section>
+						<h3>Linked Open Data (LOD) cloud</h3>
+						<br/>
+						<img  src="lod-datasets_2011-09-19_colored.svg" alt="lod-datasets_2011-09-19_colored.svg">
+						<br/><br/>
+						<small><a href="http://richard.cyganiak.de/2007/10/lod/lod-datasets_2011-09-19_colored.svg" >http://richard.cyganiak.de/2007/10/lod/</a></small>
+			</section>
+					
+			<section>
+						<h3>Datasets de interés</h3>
+						<br /><br />
+						<ul>
+								<li><a href="http://bio2rdf.org/">Bio2RDF</a></li>
+
+								<li><a href="http://miuras.inf.um.es/~ogo/ogolod.html">OGOLOD</a> (¡UM!)</li>
+
+								<li><a href="http://linkedlifedata.com/">LinkedLifeData</a></li>
+
+								<li><a href="http://semanticscience.org/projects/hyque/index.html">HyQue</a>*</li>
+
+								<li><a href="http://www.ebi.ac.uk/arrayexpress/">ArrayExpress and Gene expression atlas</a>*</li>
+								
+								<li><a href="http://www.uniprot.org/">UniProt</a></li>
+								
+								<li>LOD cloud ...</li>
+						</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>RDF</h2>
+			</section>
+			<section>
+						<h3>RDF (Resource Description Framework)</h3>
+						<br>
+						<p align="left">RDF es un estándar oficial del <a href="www.w3.org">W3C</a> para representar información en la web</p><br>
+						<p align="left"><a href="www.w3.org/standards/techs/rdf">www.w3.org/standards/techs/rdf</a></p>
+
+					</section>
+					<section>
+						<h3>Triple RDF</h3>
+						<br>
+						<img src="2Triple_datatype.png" alt="2Triple_datatype.png">
+					</section>
+					<section>
+						<h3>Grafo RDF</h3>
+						<br>
+						<p>Un grafo RDF es un conjunto de triples</p>
+						<br>
+						<img src="Grafo2.png" alt="Grafo2.png">
+					</section>
+					<section>
+						<h3>Grafo RDF</h3>
+						<br>
+						<p align="left">Algunos objetos pueden ser valores literales (Cadenas de caracteres)</p><br>
+						<p align="left">Sujetos y predicados sólo pueden ser recursos</p><br>
+						<p align="left">Los valores literales pueden tener tipo (<a href="http://www.w3.org/TR/xmlschema-2/">XML Schema datatypes</a>)</p>
+						<br>
+						<img src="triple_datatype.png" alt="triple_datatype.png">
+					</section>
+					<section>
+						<h3>Elementos RDF</h3>
+						<br>
+						<p align="left"><code>rdf:type</code>: agrupar recursos en clases</p><br>
+						<img src="rdf_type.png">
+					</section>
+					<section>
+						<h3>Elementos RDF</h3>
+						<br>
+						<img src="rdf_total.svg">
+					</section>
+					<section>
+						<h3>URIs en RDF</h3>
+						<br>
+						<p align="left">Cada recurso (Sujeto, predicado, objeto) tiene una URI</p><br>
+						<p align="left">URI: Uniform Resource Identifier (<a href="http://tools.ietf.org/html/rfc3986">RFC3986</a>)</p><br>
+						<p align="left">Reference URI: URI + fragment (http://foo/bar#frag)</p>
+						<p align="left"><small>(En Linked Data, las URIs se pueden <i>resolver</i>, es decir <i>de-referenciar</i>)</small></p>
+					</section>
+					<section>
+						<h3>Espacios de nombres XML</h3>
+						<br>
+						<p align="left">RDF usa espacios de nombres XML mediante "qualified names"</p><br>
+						<p align="left">Vocabulario: URIs bajo un espacio de nombre</p>
+						<br>
+						<ul>
+							<li>rdfs="http://www.w3.org/2000/01/rdf-schema#"</li>
+							<li>obo="http://purl.org/obo/owl/GO#"</li>
+							<li>owl="http://www.w3.org/2002/07/owl#"</li>
+							<li>...</li>
+						</ul>
+					</section>	
+					<section>
+						<h3>Serializar RDF</h3>
+						<br>
+						<p align="left">RDF es un modelo para representar datos</p><br>
+						<p align="left">Ese modelo abstracto se puede representar con diferentes sintaxis: "Serializar" (escribir) en un archivo</p><br>
+						<p align="left">Una de esas sintaxis es RDF/XML</p><br>
+						<p align="left">No confundir el modelo con la sintaxis: ¡RDF es mucho más que un archivo XML!</p>
+					</section>
+					<section>
+						<h3>Serializar RDF</h3>
+						<br><br>
+						<span style="font-size: smaller;">
+						<ul>
+							<li><strong>RDF/XML</strong> (<a href="http://www.w3.org/TR/rdf-syntax-grammar/">http://www.w3.org/TR/rdf-syntax-grammar/</a>)</li>
+							<li><strong>RDFa</strong> (<a href="http://www.w3.org/TR/rdfa-core/">http://www.w3.org/TR/rdfa-core/</a>)</li>
+							<li>Turtle (<a href="http://www.w3.org/TR/turtle/">http://www.w3.org/TR/turtle/</a>)</li>
+							<li>N3 (<a href="http://www.w3.org/DesignIssues/Notation3.html">http://www.w3.org/DesignIssues/Notation3.html</a>)</li>
+							<li>...</li>						
+						</ul>
+						</span>
+					</section>
+					<section>
+						<h3>Serializar RDF: RDF/XML</h3>
+						<br>
+						<img src="valid_rdf.png" alt="valid_rdf.png">
+						<br><br>
+						<img src="rdf_xml.png">
+					</section>
+					<section>
+						<h3>Vocabulario (ontología) / triples</h3>
+						<br/>
+							<img src="OntologiaInstancias.png" alt="OntologiaInstancias.png">
+					</section>
+				
+					<section>
+						<h3>Más información</h3>
+						<br><br>
+						<p><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
+						<p><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
+					</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>SPARQL</h2>
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Linked Data</h2>
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Semantic Web Services</h2>
+			</section>
+		</section>
+		
+		
+		</section>
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

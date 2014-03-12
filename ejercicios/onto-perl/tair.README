@@ -1,0 +1,113 @@
+February 9, 2006
+
+gene_association.tair.gz -- A comprehensive source for Arabidopsis thaliana
+GO annotations composed of gene associations made by The Arabidopsis Information 
+Resource (TAIR) and The Institute for Genomic Research (TIGR).  After the A.
+thaliana annotation project ended at TIGR, the annotations made
+by the TIGR Arabidopsis thaliana team were integrated into the TAIR 
+dataset and are now being maintained by TAIR.  The annotating database is 
+identified in column 15.  
+
+Questions about this file should be sent to: curator@arabidopsis.org
+
+
+The gene_association.tair.gz file uses the standard file format for
+gene_association files of the Gene Ontology (GO) Consortium.  A more
+complete description of the file format is found here:
+
+ http://www.geneontology.org/doc/GO.annotation.html#file
+
+This file is updated on a daily basis.
+
+
+Columns are:
+
+ 1: DB, database contributing the file (always "TAIR" for this file).
+ 2: DB_Object_ID  (TAIR's unique identifier for genes).
+ 3: DB_Object_Symbol, see below
+ 4: Qualifier (optional), one or more of 'NOT', 'contributes_to',
+    'colocalizes_with' as qualifier(s) for a GO annotation, when needed,
+    multiples separated by pipe (|)
+ 5: GO ID, unique numeric identifier for the GO term
+ 6: DB:Reference(|DB:Reference), the reference associated with the GO
+    annotation
+ 7: Evidence, the evidence code for the GO annotation
+ 8: With (or) From (optional), any With or From qualifier for the GO
+    annotation
+ 9: Aspect, which ontology the GO term belongs (Function, Process or
+    Component)
+10: DB_Object_Name(|Name) (optional), a name for the gene product in
+    words, e.g. 'acid phosphatase'
+11: DB_Object_Synonym(|Synonym) (optional), see below
+12: DB_Object_Type, type of object annotated, e.g. gene, protein, etc.
+13: taxon(|taxon), taxonomic identifier of species encoding gene
+    product
+14: Date, date GO annotation was made in the format
+15: Assigned_by, source of the annotation (either "TAIR" or "TIGR")
+
+Note on TAIR nomenclature, pertains to columns 3 and 11:
+
+Column 3 - When a symbolic Gene Name (e.g. AP2, AG) exists, it will be
+present in Column 3. When no Gene Name has been conferred, the AGI
+Name (e.g. AT1g01010.1) will be present in column 3.
+
+Column 11 - The Locus Name (e.g. AT1g01010, SGR5, ICX1) is always a part of this
+information. For those genes where only the genetic loci is known such as SGR5, gene name is also represented as locus name. Any other names (except the symbolic name, which will be
+in Column 3 if one exists), including Aliases used for the gene will
+also be present in this column.
+
+Information on annotation methods for TAIR and TIGR follow:
+
+--------------------------------------------------------------------------
+**TAIR**
+
+The following paper describes TAIR's GO annotation methods, please cite it
+when using TAIR's GO annotation data in your research.
+
+Berardini, TZ, Mundodi, S, Reiser, L, Huala, E, Garcia-Hernandez, M,
+Zhang, P, Mueller, LM, Yoon, J, Doyle, A, Lander, G, Moseyko, N, Yoo,
+D, Xu, I, Zoeckler, B, Montoya, M, Miller, N, Weems, D, and Rhee, SY
+(2004) Functional annotation of the Arabidopsis genome using
+controlled vocabularies. Plant Physiol. 135(2):1-11.
+
+----------------------------------------------------------------------------
+**TIGR**
+
+Methodology  
+==============
+
+Each gene product is examined by an annotator.  Terms are assigned by
+examining the literature, and translating the experimental information
+contained in experimental results into the appropriate GO terms.
+Other gene products are compared by sequence similarity, phylogeny and
+family membership to characterized gene products, and are assigned GO
+terms based upon the quality of the matches.
+
+ISS Annotations by TIGR:
+========================
+
+In the case of 'Inferred from Sequence Similarity' (ISS) evidence, the reference
+is usually 'TIGR_Ath1:annotation', which is defined as follows:
+    
+    author: TIGR Arabidopsis annotation team
+    name: TIGR annotation based upon multiple sources of similarity
+    evidence
+
+    description: TIGR_Ath1:annotation denotes a curator's
+    interpretation of a combination of evidence.  Our internal
+    software tools present us with a great deal of evidence based
+    domains, sequence similarities, signal sequences, paralogous
+    proteins, etc.  The curator interprets the body of evidence to
+    make a decision about a GO assignment when an external reference
+    is not available.  The curator places one or more accessions that
+    informed the decision in the "with" field."
+
+    What this says is that we have used many sequence similarity hits,
+    etc., to make our decision. However, we choose only 1-3 pieces of
+    information as "with" information, as it is not practical to enter
+    and submit many entries for each annotation.  We also have
+    internal calculations of paralogy and new domains we are
+    identifying which have not yet been published, but which help
+    inform our decisions.
+
+
