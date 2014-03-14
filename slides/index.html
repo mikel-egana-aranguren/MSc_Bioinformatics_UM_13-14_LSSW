@@ -107,16 +107,21 @@ Collaboratively</p><br>
 			<section>
 				<h3>OBO</h3>
 				<br>
-				<p align="left">ChEBI, Cell Type, Sequence Ontology, Phenotype Ontology, UberOntology </p><br>
-				<p align="left">Basic Formal Ontology (BFO), OBO Relation Ontology (RO</p><br>
+				<p align="left">ChEBI, Cell Type, Sequence Ontology, Phenotype Ontology, UberOntology, ...  </p><br>
+				<p align="left">"Meta-Ontologías": Basic Formal Ontology (BFO), OBO Relation Ontology (RO)</p><br>
 				<p align="left">Mucho contenido de relativamente alta calidad pero ... </p><br>
 				<p align="left" class="fragment roll-in">... la mayoría de las ontologías son muy pobres axiomáticamente</p><br>
 				<p align="left" class="fragment roll-in">... OBO format (*)</p><br>
 			</section>
 			<section>
+				<h3>OBO format</h3>
+				<br>
+				<img  src="obo_format.png" alt="obo_format.png">
+			</section>
+			<section>
 				<h3>ONTO-PERL</h3>
 				<br>
-				<p align="left">API para trabajar con ontologías OBO (y OWL) en Perl</p><br>
+				<p align="left">API para trabajar con ontologías OBO (y OWL*) en Perl</p><br>
 				<p align="left"><a href="http://search.cpan.org/dist/ONTO-PERL/">http://search.cpan.org/dist/ONTO-PERL/</a></p><br>
 			</section>
 			<section>
@@ -134,17 +139,41 @@ Collaboratively</p><br>
 			</section>
 			
 			<section>
-				<h3>Ontologias en Galaxy</h3>
+				<h3>Ontologías en Galaxy</h3>
 				<br/>
-				<img  src="ontology_tool_shed.png" alt="ontology_tool_shed.png">
+				<img  src="ontology_tool_shed.png" alt="ontology_tool_shed.png"><br><br>
+				<p align="center"><a href="http://biomaster.atica.um.es:8080">http://biomaster.atica.um.es:8080</a></p><br>
 			</section>
 			
 			<section>
-				<h3>Ontologias en Galaxy: ejercicio 1</h3>
+				<h3>Ontologías en Galaxy: Ejercicio 1</h3>
 				<br>
-				<p align="left">Recrear el ejercicio onto-perl 1, con onto-toolkit</p><br>
-				<p align="left">http://biomaster.atica.um.es:8080</p><br>
+				<p align="left">Usando onto-toolkit, encontrar los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology, y crear un workflow</p><br>
+				<p align="left">(Hay que eliminar las lineas que empiezan por "!" del archivo gene_association.tair y convertir los tabs a columnas)</p><br>
 			</section>
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 2</h3>
+				<br>
+				<p align="left">Usando onto-toolkit, encontrar los ancestros comunes de GO GO:0030685 y GO:0000800, y crear un workflow</p><br>
+			</section>
+			
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 3</h3>
+				<br>
+				<p align="left">Identificar que terminos GO tienen en comun las proteinas JUN (UniProt ID: P05412) y FOS (UniProt ID: P01100) y crear un workflow</p><br>
+				<p align="left">(Obtener las proteinas mediante BioMart y luego usar onto-toolkit)</p><br>
+			</section>
+			
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 4</h3>
+				<br>
+				<p align="left">Performing term enrichment using an ontology subset</p><br>
+				
+			</section>
+			
+			
+			
+			
 		</section>
 		<section>
 			<section>
@@ -429,6 +458,13 @@ Collaboratively</p><br>
 							</ul>
 						</p>
 					</section>
+					
+					<section>
+						<h3>OWL API</h3>
+						<br>
+						<p align="left">Ejercicio</p><br>
+						
+					</section>
 										
 				</section>
 		
@@ -655,14 +691,12 @@ Collaboratively</p><br>
 					<section>
 						<h3>Más información</h3>
 						<br><br>
-						<p><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
-						<p><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
+						<p align="left"><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
+						<p align="left"><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
 					</section>
 					<section>
 						<h3>Ejercicios RDFlib?</h3>
-						<br><br>
-						<p><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
-						<p><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
+						<br><br>		
 					</section>
 		</section>
 		<section>
@@ -969,7 +1003,8 @@ WHERE {<br>
 							<p align="left"><a href="http://jetty.codehaus.org/jetty/">Jetty</a>: servidor web</p>
 							<p align="left"><a href="http://wifo5-03.informatik.uni-mannheim.de/pubby/">Pubby</a>: negociacion contenido etc.</p>
 					</section>
-					<section>
+					
+<!--					<section>
 						<h3>Life Sciences Linked Data</h3>
 						<br/>
 						<p align="left">Probar con el dataset por defecto</p>	
@@ -1013,7 +1048,7 @@ WHERE {<br>
 						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD </p>
 						<br/>
 						<p align="left">Instrucciones: life-sciences-linked-data/LSLD/README, "Using a different dataset"</p>
-					</section>
+					</section>-->
 					
 					<section>
 						<h3>Life Sciences Linked Data</h3>
@@ -1022,7 +1057,7 @@ WHERE {<br>
 						<ol>
 							<li><code>/jena-fuseki-0.2.6-SNAPSHOT</code></li>
 							<li><code>mkdir lslddb</code></li>
-							<li><code>./fuseki-server --update --loc=./lslddb /dataset</code></li>
+							<li><code>./fuseki-server --port=3030 --update --loc=./lslddb /dataset</code></li>
 							<hr align="center" width="100%" noshade="noshade" />
 							<li><code>./s-put http://localhost:3030/dataset/data lsld Data/LSLD_example.owl</code></li>
 						</ol>
@@ -1042,6 +1077,12 @@ WHERE {<br>
 							<li><a href="http://localhost:8080/Protein_A">http://localhost:8080/Protein_A</a></li>
 						</ul>
 						</span>
+					</section>
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>
+						<p align="left">!!! Cada pareja tiene dos puertos asignados !!!</p><br/>
 					</section>
 					
 					<section>
@@ -1125,6 +1166,17 @@ e.close();
 			<section>
 				<br><br><br><br>
 				<h2>Semantic Web Services</h2>
+			</section>
+			<section>
+				<h3>SADI</h3>
+				<br>						
+						<p align="left">SADI ... </p>
+						<br>
+			</section>
+			<section>
+				<h3>SADI</h3>
+				
+				<img  src="SADI.jpg" alt="SADI.jpg">
 			</section>
 		</section>
 		<section>
