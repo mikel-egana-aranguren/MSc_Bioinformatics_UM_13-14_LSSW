@@ -1,1 +1,1108 @@
-test
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Mikel Egaña Aranguren" >
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+<!-- 		<link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+		<section>
+			<section>
+				<br>
+				<h2>Life Sciences Semantic Web (LSSW)</h2>
+				<br>
+				<h3>Máster Bioinformática UM (2013-2014)</h3>
+				<br>
+				<p>
+					<small>Mikel Egaña Aranguren</small><br>
+					<small><a href="http://mikeleganaaranguren.com/">http://mikeleganaaranguren.com</a> / <a href="mailto:mikel.egana.aranguren@gmail.com">mikel.egana.aranguren@gmail.com</a></small><br>
+				</p>
+			</section>
+			<section>
+				<br>
+				<h2>Life Sciences Semantic Web (LSSW)</h2>
+				<br>
+				<br>
+				<p align="left"><a href="http://mikeleganaaranguren.wordpress.com/teaching/">http://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
+				<p align="left"><a href="http://mikel-egana-aranguren.github.io/MSc_Bioinformatics_UM_13-14_LSSW/index.html">Versión HTML de esta presentación</a></small></p><br>
+				<p align="left"><a href="http://github.com/mikel-egana-aranguren/MSc_Bioinformatics_UM_13-14_LSSW">Todo el material (Presentación, ejercicios, datos, código) en GitHub</a></small></p><br>
+				<br><br>
+				<img  src="by-nc-sa.eu_petit.png" alt="by-nc-sa">
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Life Sciences Semantic Web</h2>
+			</section>
+			<section>
+				<h3>Life Sciences Semantic Web</h3>
+				<br/>
+				<img  src="SW_Mark.png" alt="SW_Mark.png">
+			</section>
+			<section>
+				<h3>Pila tecnologías Web Semántica</h3>
+				<br/>
+				<img  src="SW_stack.png" alt="SW_stack.png">
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Ontologías</h2>
+			</section>
+			<section>
+				<h3>bio-ontologías</h3>
+				<br>
+				<img  src="ontologia.png" alt="ontologia.png">
+			</section>
+			<section>
+				<h3>Open Biological and Biomedical Ontologies (OBO)</h3>
+				<br>
+				<p align="left"><a href="http://www.obofoundry.org/">OBO Foundry</a>: Open, Common shared syntax, 
+Unique identifier space,
+Versions, 
+Delineated content, 
+Definitions,
+OBO Relation Ontology, 
+Well documented,
+Users, 
+Collaboratively</p><br>
+			</section>
+			<section>
+				<h3>Gene Ontology</h3>
+				<br>
+				<p align="left">Vocabulario controlado para describir la función molecular, el componente celular y el proceso biológico de genes (“Gene Products”)</p><br>
+				<p align="left">Integración de información (GAF files), explotación estructura (ej. Term Enrichment)</p><br>
+			</section>
+			
+			<section>
+				<h3>OBO</h3>
+				<br>
+				<p align="left">ChEBI, Cell Type, Sequence Ontology, Phenotype Ontology, UberOntology, ...  </p><br>
+				<p align="left">"Meta-Ontologías": Basic Formal Ontology (BFO), OBO Relation Ontology (RO)</p><br>
+				<p align="left">Mucho contenido de relativamente alta calidad pero ... </p><br>
+				<p align="left" class="fragment roll-in">... la mayoría de las ontologías son muy pobres axiomáticamente</p><br>
+				<p align="left" class="fragment roll-in">... OBO format (*)</p><br>
+			</section>
+			<section>
+				<h3>OBO format</h3>
+				<br>
+				<img  src="obo_format.png" alt="obo_format.png">
+			</section>
+			<section>
+				<h3>ONTO-PERL</h3>
+				<br>
+				<p align="left">API para trabajar con ontologías OBO (y OWL*) en Perl</p><br>
+				<p align="left"><a href="http://search.cpan.org/dist/ONTO-PERL/">http://search.cpan.org/dist/ONTO-PERL/</a></p><br>
+			</section>
+			<section>
+				<h3>ONTO-PERL: Ejercicio 1</h3>
+				<br>
+				<p align="left">Crear un script que devuelva los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology</p><br>
+				<p align="left">Usar los archivos gene_association.tair y go.obo</p><br>
+			</section>
+			
+			<section>
+				<h3>ONTO-PERL: Ejercicio 2</h3>
+				<br>
+				<p align="left">Crear un script que, dados los terminos de GO GO:0030685 y GO:0000800, obtenga los ancestros comunes de ambos </p>
+				<img  src="1471-2105-11-S12-S8-2.jpg" alt="1471-2105-11-S12-S8-2.jpg">
+			</section>
+			
+			<section>
+				<h3>Ontologías en Galaxy</h3>
+				<br/>
+				<img  src="ontology_tool_shed.png" alt="ontology_tool_shed.png"><br><br>
+				<p align="center"><a href="http://biomaster.atica.um.es:8080">http://biomaster.atica.um.es:8080</a></p><br>
+			</section>
+			
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 1</h3>
+				<br>
+				<p align="left">Usando onto-toolkit, encontrar los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology, y crear un workflow</p><br>
+				<p align="left">(Hay que eliminar las lineas que empiezan por "!" del archivo gene_association.tair y convertir los tabs a columnas)</p><br>
+			</section>
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 2</h3>
+				<br>
+				<p align="left">Usando onto-toolkit, encontrar los ancestros comunes de GO GO:0030685 y GO:0000800, y crear un workflow</p><br>
+			</section>
+			
+			<section>
+				<h3>Ontologías en Galaxy: Ejercicio 3</h3>
+				<br>
+				<p align="left">Identificar que terminos GO tienen en comun las proteinas JUN (UniProt ID: P05412) y FOS (UniProt ID: P01100) y crear un workflow</p><br>
+				<p align="left">(Obtener las proteinas mediante BioMart y luego usar onto-toolkit)</p><br>
+			</section>
+			
+			<!--<section>
+				<h3>Ontologías en Galaxy: Ejercicio 4</h3>
+				<br>
+				<p align="left">Performing term enrichment using an ontology subset</p><br>
+				
+			</section>-->
+			
+			
+			
+			
+		</section>
+		<section>
+			<section>
+					<br><br><br><br>
+						<h2>OWL (Web Ontology Language)</h2>
+
+					</section>
+					<section>
+						<h3>OWL</h3>
+						<br>
+						<p align="left">OWL es un estándar oficial del <a href="www.w3.org">W3C</a> para crear ontologías en la web con un semántica precisa y formal</p><br>
+						<p align="left"><a href="http://www.w3.org/standards/techs/owl">http://www.w3.org/standards/techs/owl</a></p>
+					</section>
+					<section>
+						<h3>OWL</h3>
+						<br>
+						<p align="left">OWL se basa en Lógica Descriptiva (DL)</p><br>
+						<p align="left">Representación computacional de un dominio de conocimiento:
+						<ul>
+							<li>Razonamiento automático: inferir conocimiento "nuevo" (*), consultas, consistencia, clasificar entidades contra la ontología, ...</li>						
+							<li>Integrar conocimiento disperso</li>
+						</ul>
+						</p>
+					</section>
+
+					<section>
+						<h3>Sintaxis OWL</h3>
+						<br>
+						<p align="left">Para ordenadores: <strong>RDF/XML</strong>, OWL/XML, ...</p>
+						<img src="OWL_rdf_xml.png">
+						<p align="left">Para humanos: <strong>Manchester OWL Syntax</strong>, functional, ...</p>
+						<img src="OWL_mos.png">
+					</section>
+					<section>
+						<h3>Semántica OWL</h3>
+						<br>
+						<p align="left">Una ontología OWL esta compuesta de:
+							<ul>
+								<li>Entidades: las entidades del dominio de conocimiento, <em>identificadas con URIs</em>, introducidas por el desarrollador 
+								("proteina", "participa_en", ...)</li>
+								<li>Axiomas: relacionan las entidades mediante el <em>vocabulario</em> lógico que ofrece OWL</li>
+							</ul>						
+						</p>
+						<p align="left">Una ontología puede importar otra (owl:import) y hacer referencia a sus entidades mediante axiomas</p>
+					</section>
+					<section>
+						<h3>Entidades OWL</h3>
+						<br>
+
+							<ul>
+								<li>Individuos</li>
+								<li>Clases</li>
+								<li>Propiedades
+															<ul>
+																<li>Objeto</li>
+																<li>Anotación</li>
+																<li>Datos</li>
+															</ul>	
+								</li>
+							</ul>						
+						</p>
+					</section>
+					<section>
+						<h3>Individuos</h3>
+						<br><br>
+						<img src="Pizza_inds.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					<section>
+						<h3>Propiedades</h3>
+						<br><br>
+						<img src="Pizza_props.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					<section>
+						<h3>Clases</h3>
+						<br><br>
+						<img src="Pizza_clases.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					<section>
+						<h3>Semántica OWL</h3>
+						<br>
+						<p align="left">Una ontología OWL formada por individuos y clases es una "Base de Conocimiento" (KB) formada por:
+						<br>
+						<ul>
+							<li>TBox (Terminological Box): clases (~ "esquema")</li>		
+							<li>Abox (Assertional Box): individuos (~ "datos")</li>				
+						</ul>
+						</p>
+					</section>
+					<section>
+						<h3>Clases</h3>
+						<br><br>
+						<img src="Clase_OWL.png">
+					</section>
+					<section>
+						<h3>Clase subclase</h3>
+						<br><br>
+						<img src="Clase_SubClase_OWL.png">
+					</section>
+					<section>
+						<h3>Clases equivalentes</h3>
+						<br><br>
+						<img src="Clase_equiv_OWL.png">
+					</section>
+					<section>
+						<h3>Jerarquía de clases (Taxonomía)</h3>
+						<br><br>
+						<img src="OWL_is_a.png">
+					</section>
+					<section>
+						<h3>Condiciones necesarias</h3>
+						<br><br>
+						<img src="OWL_necessary.png">
+					</section>
+					<section>
+						<h3>Condiciones necesarias y suficientes</h3>
+						<br><br>
+						<img src="OWL_necessary_and_sufficient.png">
+					</section>
+					<section>
+						<h3>Restricción existencial (some)</h3>
+						<br><br>
+						<img src="Pizza_existential.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					<section>
+						<h3>Restricción universal (only)</h3>
+						<br><br>
+						<img src="Pizza_universal.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					
+					<section>
+						<h3>Restricción a un individuo (value)</h3>
+						<br><br>
+						<img src="Pizza_has_value.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					
+					<section>
+						<h3>Restricciones cardinales</h3>
+						<br><br>
+						<img src="Pizza_cardinality.png">
+						
+						<p align="right">(+ QCR!)
+							<small> <a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					
+					<section>
+						<h3>Más axiomas para clases</h3>
+						<br>
+						<p align="left">disjointFrom</p>
+						<p align="left">booleanos: not, or, and</p><br>
+						<img src="owl_boolean.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>
+					<section>
+						<h3>Expresiones complejas</h3>
+						<br><br>
+						<img src="OWL_complex_expression.png">
+					</section>
+			
+					<section>
+						<h3>Propiedades OWL</h3>
+						<br>
+						<img src="OWL_props.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>	
+					
+					<section>
+						<h3>Jerarquía propiedades</h3>
+						<br><br>
+						<p align="left">Jerarquía propiedad-subpropiedad (~taxonomía pero con propiedades), ej:
+							<ul>
+								<li>interacciona con
+									<ul>
+										<li>mata a
+											<ul>
+												<li>estrangula a</li>											
+											</ul>
+										</li>									
+									</ul>								
+								</li>							
+							</ul>		
+						</p>
+					</section>	
+					<section>
+						<h3>Características propiedades objeto</h3>
+						<br>
+						<img src="props_f_1.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>	
+					<section>
+						<h3>Características propiedades objeto</h3>
+						<br>
+						<img src="props_f_2.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>	
+					<section>
+						<h3>Características propiedades objeto</h3>
+						<br>
+						<img src="props_f_3.png">
+						<p align="right">
+							<small><a href="http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/">Manchester tutorial</a></small></p>
+					</section>	
+					<section>
+						<h3>Características propiedades datos</h3>
+						<br>
+						<p align="left">Solo funcional</p><br>
+						<p align="left">Dominio clases, rango datatypes</p>
+					</section>	
+					<section>
+						<h3>Propiedades anotación</h3>
+						<br>
+						<p align="left">Anotar con lenguaje natural entidades 
+						(propiedades, clases, individuos), axiomas, ontologías</p><br>
+						<p align="left">Fuera de la semántica</p><br>
+						<p align="left">rdfs:label, rdfs:comment, dublin core, a medida</p>
+					</section>
+					<section>
+						<h3>Individuos</h3>
+						<br>
+						<p align="left">Miembro de una o más clases (Types)</p><br>
+						<p align="left">Igual (SameAs) o diferente (DifferentFrom) a otro individuo</p><br>
+						<p align="left">Relaciones binarias con otros individuos o datos (triples), positivas o negativas</p><br>
+					</section>
+					<section>
+						<h3>Razonamiento automático</h3>
+						<br>
+						<p align="left">Un razonador infiere los "nuevos" axiomas que implican los axiomas que hemos introducido en la ontología</p><br>
+						<p align="left">El razonador infiere <i>todos</i> los axiomas; es útil para tratar con conocimiento complejo</p><br>
+						<p align="left">Open World Assumption (OWA)</p>
+						<br>
+						<p align="left">(Falta de) Unique Name Assumption (¡owl:sameAs!)</p>
+					</section>
+					<section>
+						<h3>Tareas más comunes razonamiento automático</h3>
+						<br>
+						<p align="left">Mantener taxonomía</p><br>
+						<p align="left">Consistencia</p><br>
+						<p align="left">Clasificar entidades y consultas</p>
+					</section>
+					<section>
+						<h3>Mantener una taxonomía</h3>
+						<br>
+						<img src="Normalisation_instance.png">
+					</section>
+					<section>
+						<h3>Consistencia</h3>
+						<br>
+						<img src="consistencia.png">
+					</section>
+					<section>
+						<h3>Clasificar entidades, consultas</h3>
+						<br><br>
+						<p align="left">Clasificar entidades: dada una entidad nueva, como se relaciona con las 
+						demas entidades (types, equivalentTo, subClassOf, triples)</p><br>
+						<p align="left">Una consulta es una clase anónima que clasificamos contra la ontología como si fuese una entidad</p>
+					</section>
+	
+					<section>
+						<h3>Ejercicios</h3>
+						<br>
+						<p align="left">Ejercicios: <a href="owl_assignment.pdf">owl_assignment.pdf</a></p><br>
+						<p align="left">Soluciones: 
+							<ul>
+							<li><a href="cars.owl">cars.owl</a></li>
+							<li><a href="normalisation.owl">normalisation.owl</a>, <a href="normalisation.png">normalisation.png</a></li>
+							<li><a href="answers_3_4.pdf">answers_3_4.pdf</a></li>
+							</ul>
+						</p>
+					</section>
+					
+					<section>
+						<h3>OWL API</h3>
+						<br>
+						<p align="left"><a href="http://owlapi.sourceforge.net/">http://owlapi.sourceforge.net/</a></p><br>
+						<p align="left"><a href="http://github.com/owlcs/owlapi">http://github.com/owlcs/owlapi</a></p><br>
+					</section>
+										
+				</section>
+		
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Linked Data</h2>
+			</section>
+			<section>
+				<h3>Video divulgativo</h3>
+				<br/>
+				<p>
+				<iframe src="linked_data_1280x720.webm" width="750" height="421" frameborder="0"></iframe>
+				</p>	 
+			</section>
+			<section>
+				<h3>¿Qué es Linked Data (LD)?</h3>
+				<br>
+				<p align="left">Un método para ofrecer datos directamente en la web</p><br>
+				<p align="left">Una propuesta del <a href="http://www.w3.org">W3C</a>: 
+				<a href="http://www.w3.org/standards/semanticweb/data">http://www.w3.org/standards/semanticweb/data</a></p><br>
+			</section>
+			<section>
+				<h3>Un primer paso hacia la Web Semántica</h3>
+				<br/>
+					<p align="left">LD utiliza la tecnología <i>ya existente</i> (URI, HTTP, ...) 
+						para ofrecer una primera versión de la Web Semántica</p>
+			</section>
+			<section>
+			<h3>Pila tecnologías Web Semántica y LD</h3>
+				<br/>
+				<img src="semantic_web_technology_stack_small.png">
+				<p align="right"><small><a href="http://bnode.org/blog/2009/07/08/the-semantic-web-not-a-piece-of-cake">BNODE</a></small></p>
+			</section>
+			<section>
+						<h2>Principios LD</h2>
+						<br/>
+						<ol>
+							<li class="fragment roll-in">Usar URIs para identificar entidades</li>
+							<li class="fragment roll-in">Usar URIs HTTP para que se pueda acceder a esas entidades</li>
+							<li class="fragment roll-in">Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
+							<li class="fragment roll-in">Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
+						</ol>
+						<br/><br/>
+						<small><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></small><br>
+			</section>
+					
+			<section>
+						<h3>Con LD publicamos datos de manera ... </h3>
+						<br/>
+						<h3>... semántica</h3>
+						<br/>
+						<h3>... enlazada </h3>
+			</section>
+			<section>
+						<h3>Semántica</h3>
+						<br/>
+						<p align="left">RDF ofrece el triple, un modelo de datos explícito y homogéneo: una "frase" estándar que los ordenadores pueden "entender"</p>
+						<br/>
+						
+							<img width="600" height="300" src="Triple.png" alt="Triple.png">
+						
+			</section>
+			<section>
+						<h3>Enlaces</h3>
+						<br/>
+						<p align="left">En el triple, cada entidad (sujeto, predicado, objeto) tiene una URI que lo identifica</p>
+						<p align="left">Los datos son enlazados a otros datos a través de la web, con enlaces explícitos</p>
+						<br/>
+						
+							<img src="Links.png" alt="Links.png">
+						
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br/>
+						<img  src="Red.png" alt="Red.png">
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br>
+												
+						<p align="left">Internet de datos, en vez de documentos: "Base de Datos universal":<br>
+								<ul>
+										<li>Es más fácil construir aplicaciones que exploten los datos, incluyendo razonamiento automático</li>
+										<li>Encontramos justo lo que buscamos: consultas directas (SPARQL) en vez de procesar texto</li>										
+								</ul>					
+						</p>
+			</section>
+					
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br><br>
+						<p align="left">Navegamos directamente por las datos (RDF), en vez de navegar a través de documentos que representan esos datos en lenguaje natural (HTML)</p><br>
+						<p align="left">Enlazar datos nuevos es tan fácil como enlazar páginas web: crecimiento orgánico de la red</p>
+			</section>	
+			<section>
+						<h3>Linked Open Data (LOD) cloud</h3>
+						<br/>
+						<img  src="lod-datasets_2011-09-19_colored.svg" alt="lod-datasets_2011-09-19_colored.svg">
+						<br/><br/>
+						<small><a href="http://richard.cyganiak.de/2007/10/lod/lod-datasets_2011-09-19_colored.svg" >http://richard.cyganiak.de/2007/10/lod/</a></small>
+			</section>
+					
+			<section>
+						<h3>Datasets de interés</h3>
+						<br /><br />
+						<ul>
+								<li><a href="http://bio2rdf.org/">Bio2RDF</a></li>
+
+								<li><a href="http://miuras.inf.um.es/~ogo/ogolod.html">OGOLOD</a> (¡UM!)</li>
+
+								<li><a href="http://linkedlifedata.com/">LinkedLifeData</a></li>
+
+								<li><a href="http://semanticscience.org/projects/hyque/index.html">HyQue</a>*</li>
+
+								<li><a href="http://www.ebi.ac.uk/arrayexpress/">ArrayExpress and Gene expression atlas</a>*</li>
+								
+								<li><a href="http://www.uniprot.org/">UniProt</a></li>
+								
+								<li>LOD cloud ...</li>
+						</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>RDF</h2>
+			</section>
+			<section>
+						<h3>RDF (Resource Description Framework)</h3>
+						<br>
+						<p align="left">RDF es un estándar oficial del <a href="www.w3.org">W3C</a> para representar información en la web</p><br>
+						<p align="left"><a href="www.w3.org/standards/techs/rdf">www.w3.org/standards/techs/rdf</a></p>
+
+					</section>
+					<section>
+						<h3>Triple RDF</h3>
+						<br>
+						<img src="2Triple_datatype.png" alt="2Triple_datatype.png">
+					</section>
+					<section>
+						<h3>Grafo RDF</h3>
+						<br>
+						<p>Un grafo RDF es un conjunto de triples</p>
+						<br>
+						<img src="Grafo2.png" alt="Grafo2.png">
+					</section>
+					<section>
+						<h3>Grafo RDF</h3>
+						<br>
+						<p align="left">Algunos objetos pueden ser valores literales (Cadenas de caracteres)</p><br>
+						<p align="left">Sujetos y predicados sólo pueden ser recursos</p><br>
+						<p align="left">Los valores literales pueden tener tipo (<a href="http://www.w3.org/TR/xmlschema-2/">XML Schema datatypes</a>)</p>
+						<br>
+						<img src="triple_datatype.png" alt="triple_datatype.png">
+					</section>
+					<section>
+						<h3>Elementos RDF</h3>
+						<br>
+						<p align="left"><code>rdf:type</code>: agrupar recursos en clases</p><br>
+						<img src="rdf_type.png">
+					</section>
+					<section>
+						<h3>Elementos RDF</h3>
+						<br>
+						<img src="rdf_total.svg">
+					</section>
+					<section>
+						<h3>URIs en RDF</h3>
+						<br>
+						<p align="left">Cada recurso (Sujeto, predicado, objeto) tiene una URI</p><br>
+						<p align="left">URI: Uniform Resource Identifier (<a href="http://tools.ietf.org/html/rfc3986">RFC3986</a>)</p><br>
+						<p align="left">Reference URI: URI + fragment (http://foo/bar#frag)</p>
+						<p align="left"><small>(En Linked Data, las URIs se pueden <i>resolver</i>, es decir <i>de-referenciar</i>)</small></p>
+					</section>
+					<section>
+						<h3>Espacios de nombres XML</h3>
+						<br>
+						<p align="left">RDF usa espacios de nombres XML mediante "qualified names"</p><br>
+						<p align="left">Vocabulario: URIs bajo un espacio de nombre</p>
+						<br>
+						<ul>
+							<li>rdfs="http://www.w3.org/2000/01/rdf-schema#"</li>
+							<li>obo="http://purl.org/obo/owl/GO#"</li>
+							<li>owl="http://www.w3.org/2002/07/owl#"</li>
+							<li>...</li>
+						</ul>
+					</section>	
+					<section>
+						<h3>Serializar RDF</h3>
+						<br>
+						<p align="left">RDF es un modelo para representar datos</p><br>
+						<p align="left">Ese modelo abstracto se puede representar con diferentes sintaxis: "Serializar" (escribir) en un archivo</p><br>
+						<p align="left">Una de esas sintaxis es RDF/XML</p><br>
+						<p align="left">No confundir el modelo con la sintaxis: ¡RDF es mucho más que un archivo XML!</p>
+					</section>
+					<section>
+						<h3>Serializar RDF</h3>
+						<br><br>
+						<span style="font-size: smaller;">
+						<ul>
+							<li><strong>RDF/XML</strong> (<a href="http://www.w3.org/TR/rdf-syntax-grammar/">http://www.w3.org/TR/rdf-syntax-grammar/</a>)</li>
+							<li><strong>RDFa</strong> (<a href="http://www.w3.org/TR/rdfa-core/">http://www.w3.org/TR/rdfa-core/</a>)</li>
+							<li>Turtle (<a href="http://www.w3.org/TR/turtle/">http://www.w3.org/TR/turtle/</a>)</li>
+							<li>N3 (<a href="http://www.w3.org/DesignIssues/Notation3.html">http://www.w3.org/DesignIssues/Notation3.html</a>)</li>
+							<li>...</li>						
+						</ul>
+						</span>
+					</section>
+					<section>
+						<h3>Serializar RDF: RDF/XML</h3>
+						<br>
+						<img src="valid_rdf.png" alt="valid_rdf.png">
+						<br><br>
+						<img src="rdf_xml.png">
+					</section>
+					<section>
+						<h3>Vocabulario (ontología) / triples</h3>
+						<br/>
+							<img src="OntologiaInstancias.png" alt="OntologiaInstancias.png">
+					</section>
+				
+					<section>
+						<h3>Más información</h3>
+						<br><br>
+						<p align="left"><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
+						<p align="left"><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
+					</section>
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>SPARQL</h2>
+			</section>
+			<section>
+						<h3>SPARQL</h3>
+						<br><br>
+						<p align="left">Lenguaje para hacer consultas sobre grafos RDF (~"El SQL para RDF")</p><br>
+						<p align="left"><a href="http://www.w3.org/standards/techs/sparql">http://www.w3.org/standards/techs/sparql</a></p><br>
+					</section>
+					<section>
+						<h3>SPARQL</h3>
+						<br><br>
+						<img src="SPARQL_abs.png">
+					</section>
+					
+					<section>
+						<h3>SPARQL</h3>
+						<br><br>
+						<img src="SPARQL_abs2.png">
+					</section>
+						
+					<section>
+						<h3>SPARQL</h3>
+						<br><br>
+						<p align="left">Tutorial: <a href="http://www.cambridgesemantics.com/sparql-by-example/slides.html" target="_blank">SPARQL by example</a> 
+						(<a href="http://www.cambridgesemantics.com/semantic-university/sparql-by-example">Cambridge Semantics</a>)
+						</p>	
+					</section>
+					<section>
+						<h3>SPARQL</h3>
+						<br><br>
+						<p align="left">Ejercicio práctico: <a href="http://linkedlifedata.com/sparql" target="_blank">http://linkedlifedata.com/sparql</a></p><br>		
+					</section>
+
+					<section>
+						<h3>SPARQL queries federadas</h3>
+						
+						<br><br>
+						<p align="left">Get all protein catabolic processes (and more specific) in biomodels</p><br>
+						<p align="left">
+						<small>
+						<code>
+						SELECT ?go ?label <br>
+						WHERE {<br>
+						&nbsp;&nbsp;service &lthttp://bioportal.bio2rdf.org/sparql> {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:label ?label .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:subClassOf ?tgo .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?tgo rdfs:label ?tlabel .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;FILTER regex(?tlabel, "^protein catabolic process")<br>
+						&nbsp;&nbsp;}<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;service &lhttp://biomodels.bio2rdf.org/sparql> {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;?x &lhttp://bio2rdf.org/biopax_vocabulary:identical-to> ?go .<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;?x a &lhttp://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction> .<br>
+						  &nbsp;&nbsp;}<br>
+						}<br>
+						</code>
+						</small>
+						</p>
+						<small><a href="http://www.slideshare.net/micheldumontier/powering-scientific-discovery-with-the-semantic-web-vanbug-2014">Michel Dumontier at Slide Share</a></small>
+					</section>
+		</section>
+		<section>
+			<section>
+					<br><br><br><br>
+						<h2>Cómo funciona Linked Data</h2>
+					</section>
+					<section>
+						<h3>Grafos y triple stores</h3>
+						<br/>
+						<p align="left">Un "triple store" contiene diferentes grafos </p><br/>
+							<img src="GrafTripleStore.png" alt="GrafTripleStore.png">	
+					</section>
+					<section>
+						<h3>Consultas</h3>
+						<br />
+						<p align="left">Solo recibiremos los triples de ese triple store 
+						(¡Pero nosotros o nuestro agente automático podemos seguir los enlaces! "Follow your nose")</p><br>
+						<p align="left">(Queries federadas*)</p>
+					</section>
+					
+					<section>
+						<h3>Negociacion contenido</h3>
+						<br/>	
+							<img src="ContentNegotation1.png" alt="ContentNegotation1.png">
+					</section>
+					
+					<section>
+						<h3>Negociacion contenido</h3>
+						<br/>
+							<img src="ContentNegotation2.png" alt="ContentNegotation2.png">
+					</section>
+					
+					<section>
+						<h3>Negociacion contenido</h3>
+						<br/>
+							<img src="ContentNegotation3.png" alt="ContentNegotation3.png">
+					</section>
+											
+					<section>
+						<h3>Diseño URIs</h3>
+						<br/>
+						<p align="left">HTTP URIs dereferenciables: cuando se busca una URI, deberia devolver una descripción del objeto que identifica esa URI</p><br/>
+						<p align="left">Descripción del objeto (documento RDF) &#8800; objeto</p><br/>
+						<p align="left"><a href="http://linkeddatabook.com/editions/1.0/#htoc11">303 URIs vs Hash URIs</a></p>
+					</section>
+					<section>
+						<h3>Diseño URIs</h3>
+						<br/>
+						<ul>
+							<li>Base URI: http://geo.linkeddata.es/</li>
+							<li>TBox URIs:
+								<ul>
+									<li>http://geo.linkeddata.es/ontology/{concept|property}</li>
+									<li>http://geo.linkeddata.es/ontology/Provincia</li>
+								</ul>
+							</li>
+							<li>ABox URIs:
+								<ul>
+									<li>http://geo.linkeddata.es/resource/{r. type}/{r. name}</li>
+									<li>http://geo.linkeddata.es/resource/Provincia/Madrid</li>	
+								</ul>
+							</li>
+						</ul><br/><br/>
+						<p><small><a href="http://www.slideshare.net/boricles/">http://www.slideshare.net/boricles/</a></small></p>
+					</section>
+					
+					<section>
+						<h3>Inferencia en LD</h3>
+						<br/>
+						<p align="left">Para producir el dataset: materializar triples y asegurar consistencia</p><br/>
+						<p align="left">En consultas</p><br/>
+					</section>
+					
+				
+					<section>
+					<br><br><br><br>
+						<h2>Consumir LD</h2>
+
+					</section>
+					<section>
+						<h3>Navegadores LD</h3>
+						<br /><br />
+						<ul>
+								<li><a href="http://wifo5-03.informatik.uni-mannheim.de/bizer/ng4j/disco/">Disco</a></li>
+								<li><a href="http://www.w3.org/2005/ajar/tab">Tabulator</a></li>
+								<li><a href="http://ode.openlinksw.com/">OpenLink</a></li>
+								<li>...</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Buscadores LD</h3>
+						<br /><br />
+						<ul>
+								<li><a href="http://sig.ma/">Sig.ma</a> (<a href="http://sig.ma/search?q=cycb">CYCB</a>)</li>
+								<li><a href="hhttp://www.swse.org/">SWSE</a></li>
+								<li>...</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Aplicaciones (Mash-ups)</h3>
+						<br /><br />
+						<ul>
+						<li><a href="http://revyu.com/">Revyu</a></li>
+						<li><a href="http://talisaspire.com/">Talis aspire</a></li>
+						<li><a href="http://data.nytimes.com/schools/schools.html">NYT</a></li>
+						<li>...</li>
+ 						</ul>
+					</section>
+				
+					<section>
+					<br><br><br><br>
+						<h2>Publicar datos en LD</h2>
+					</section>				
+				
+					<section>
+						<h3>¿Por qué publicar datos en LD?</h3>
+						<br>
+						<ul>
+							<li>Enlaces al exterior:
+									<ul>
+												<li>Publicar solo nuestros datos, referancias al resto, no hay que replicar datos externos:</li>
+												<li>Los datos externos se actualizan independientemente, y nuestro dataset va "a remolque" sin esfuerzo</li>
+									</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>¿Por qué publicar datos en LD?</h3>
+						<br>
+						<ul>
+							<li>Enlaces a nuestro dataset:
+									<ul>
+												<li>Es facil enlazar a nuestro dataset, ya que usamos HTTP URIs</li>
+												<li>Por lo tanto, aumenta la capacidad de nuestro dataset de ser descubierto mediante enlaces</li>
+									</ul>
+							
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>¿Por qué publicar datos en LD?</h3>
+						<br>
+						<p align="left">Semántica: el significado de nuestro datos es explícito y claro, 
+						debido a RDF (instancias) + OWL ("esquema"): es fácil crear aplicaciones, incluyendo razonamiento automático (ej. agentes)</p>
+					</section>
+					<section>
+						<h3>Publicar datos en LD</h3>
+						<br>
+						<img src="linkeddata.png"><br><br>
+						<p align="right"><small><a href="http://linkeddatabook.com/editions/1.0/#htoc61">
+						http://linkeddatabook.com/editions/1.0/#htoc61</a></small></p>
+					</section>
+					<section>
+						<h3>Publicar datos en LD</h3>
+						<br>
+						<ul>
+							<li>Crear el dataset
+									<ul>
+									<li>Ontología OWL: reusar lo más posible de otras ontologías para interoperabilidad</li>									
+									<li>Instancias RDF</li>									
+									</ul>
+									 </li>
+							<li>Añadir enlaces a otros datasets
+									<ul>
+									<li>Manualmente o con herramientas como SILK</li>									
+									<li>A nivel de instancias (owl:sameAs, predicados, ...) y a nivel de vocabulario (owl:equivalentClass, ...)</li>									
+									</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Publicar datos en LD</h3>
+						<br>
+						<ul>
+							<li>Almacenar el dataset en triple store</li>
+							<li>Publicar el dataset mediante servidor web</li>
+							<li>Registrar el dataset en <a href="http://datahub.io/">Data Hub</a></li>
+							<li>Generar archivo voiD (Vocabulary of Interlinked Datasets): <a href="http://www.w3.org/TR/void/">http://www.w3.org/TR/void/</a></li>
+							<li>Generar archivo <a href="http://miuras.inf.um.es/sitemap_index.xml">sitemap.xml</a> 
+							(con <a href="http://lab.linkeddata.deri.ie/2010/sitemap4rdf/">sitemap4RDF</a>) y enviarlo a Semantic Web index (<a href="http://sindice.com/">http://sindice.com/</a>) y Google</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>Publicar datos en LD</h3>
+						<br />
+						<p align="left">Ejercicio práctico: recrear todo el proceso de publicar un dataset Linked Data</p>
+						<br />
+						<p  align="left">Crear el dataset y "publicarlo" en una infraestructura ya lista (Life Sciences Linked Data)</p>
+					</section>
+				
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br />
+							<p align="left">"Pack" ya listo y configurado para publicar Linked Data en localhost (Solo para GNU/Linux)</p>
+							<br />
+							<p align="left"><a href="http://github.com/mikel-egana-aranguren/LSLD">http://github.com/mikel-egana-aranguren/LSLD</a></p>							
+
+					</section>
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br />
+							<p align="left"><a href="hhttp://jena.apache.org/documentation/serving_data/index.html">Fuseki</a>: triple store</p>
+							<img src="lsld_setting.png" align="right">
+							<p align="left"><a href="http://jetty.codehaus.org/jetty/">Jetty</a>: servidor web</p>
+							<p align="left"><a href="http://wifo5-03.informatik.uni-mannheim.de/pubby/">Pubby</a>: negociacion contenido etc.</p>
+					</section>
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>
+						<p align="left">Probar con el dataset por defecto en biomaster.atica.um.es</p>	
+						<br/>
+						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset</a></p>					
+												
+					</section>
+					
+
+
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>			
+						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD biomaster.atica.um.es</p><br/>
+						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset</a></p><br/>
+						<p align="left">¡Cada pareja tiene dos puertos asignados!¿Dónde hay que configurarlo?</p><br/>
+					</section>
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>
+						<p align="left">Crear vuestro propio dataset con Protégé 4 (<a href="http://protege.stanford.edu/">http://protege.stanford.edu/</a>) (Demo Protégé?)</p>
+						<br>						
+						<p align="left">Con enlaces a otros datasets</p>
+						<br>						
+						<p align="left">Publicar el dataset en localhost (Usar "Using a different dataset" como guía)</p>
+					</section>
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>
+						<p align="left">Silk ... </p>
+						<br>						
+						<p align="left">Inferencia con P4: materializar triples ...</p>
+					</section>
+					
+					
+					<section>
+						<h3>Sumario herramientas para LD</h3>
+						<br />
+						<ul>
+						<li>Triple strores y APIs: <a href="http://jena.apache.org/">Jena</a>, <a href="http://virtuoso.openlinksw.com/">Virtuoso</a>, 
+						<a href="http://www.openrdf.org/">Sesame</a>, <a href="http://owlapi.sourceforge.net/">OWL API</a>, ...</li>
+						<li>Editores ontologías: <a href="http://protege.stanford.edu/">Protégé</a>, <a href="http://www.topquadrant.com/products/TB_Composer.html">TopBraid composer</a>, ...</li>
+						<li>Publicar LD: <a href="http://wifo5-03.informatik.uni-mannheim.de/bizer/silk/">Silk</a>, <a href="http://wifo5-03.informatik.uni-mannheim.de/pubby/">Pubby</a>, ...</li>
+						<li>Validadores: <a href="http://idi.fundacionctic.org/vapour">Vapour</a>, <a href="http://swse.deri.org/RDFAlerts/">RDF:Alerts</a>,
+						<a href="http://inspector.sindice.com/">Sindice inspector</a>, ...</li>
+						<li>...</li>
+						</ul>
+					</section>
+			
+		</section>
+		<section>
+			<section>
+				<br><br><br><br>
+				<h2>Semantic Web Services</h2>
+			</section>
+			<section>
+				<h3>SADI</h3>
+				<br>						
+						<p align="left">SADI: Semantic Automated Discovery and Integration</p><br>
+						<p align="left"><a href="http://code.google.com/p/sadi/">http://code.google.com/p/sadi/</a></p><br>
+			</section>
+			<section>
+				<h3>SADI</h3>
+				
+				<img  src="SADI.jpg" alt="SADI.jpg">
+			</section>
+			<section>
+				<h3>SADI ejercicio 1</h3>
+				
+				<p align="left">Crear un servicio SADI</p><br>
+			</section>
+			<section>
+				<h3>SADI ejercicio 2</h3>
+				
+				<p align="left">Unir varios servicios SADI mediante SADI-Galaxy</p><br>
+			</section>
+		</section>
+		<section>
+				<section>
+						<br><br><br><br>
+						<h2>Más información</h2>
+					</section>
+					<section>
+						<h3>Más información</h3>
+						<br><br>
+						<p align="left"><a href="http://tomheath.com/papers/bizer-heath-berners-lee-ijswis-linked-data.pdf">Linked Data, the story so far</a>
+						(Christian Bizer, Tom Heath, Tim Berners-Lee)</p> <br>
+						<p align="left"><a href="http://linkeddatabook.com/editions/1.0/">Linked Data: Evolving the Web into a Global Data Space</a> 
+						(Christian Bizer, Tom Heath)</p> <br>
+						<p align="left">Semantic Web Health Care and Life Sciences Interest Group (<a href="http://www.w3.org/blog/hcls">W3C HCLS IG</a>): 
+						<a href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/">Health Care and Life Science (HCLS) Linked Data Guide</a></p> 
+						
+						programming the smeantic web
+						
+					</section>
+					<section>
+															<h3>Más información</h3>
+						<br><br>	
+						<p align="left"><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a> (O'Reilly)</p>	<br>				
+    					<p align="left"><a href="http://patterns.dataincubator.org/book/">Linked Data Patterns</a></p>
+					</section>
+			</section>
+		
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
