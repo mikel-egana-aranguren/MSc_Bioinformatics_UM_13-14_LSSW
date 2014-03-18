@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY lsld "http://www.cbgp.upm.es/LSLD_example.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.cbgp.upm.es/LSLD_example.owl#"
+     xml:base="http://www.cbgp.upm.es/LSLD_example.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:lsld="http://www.cbgp.upm.es/LSLD_example.owl#">
+    <owl:Ontology rdf:about="http://www.cbgp.upm.es/LSLD_example.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="&obo;BFO_0000056">
+        <rdfs:label>bfo:participates_in</rdfs:label>
+        <rdfs:comment> (not imported)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#interacts_with -->
+
+    <owl:ObjectProperty rdf:about="&lsld;interacts_with">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#part_of -->
+
+    <owl:ObjectProperty rdf:about="&lsld;part_of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.uniprot.org/core/Protein -->
+
+<!--    <owl:Class rdf:about="http://purl.uniprot.org/core/Protein">
+        <owl:equivalentClass rdf:resource="&lsld;Protein"/>
+    </owl:Class>-->
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Cell -->
+
+    <owl:Class rdf:about="&lsld;Cell"/>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Organelle -->
+
+    <owl:Class rdf:about="&lsld;Organelle">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&lsld;part_of"/>
+                <owl:someValuesFrom rdf:resource="&lsld;Cell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Protein -->
+
+    <owl:Class rdf:about="&lsld;Protein">
+      <!-- Added by Mikel! Protege adds this triple above and Pubby does not show it  -->
+      <owl:equivalentClass rdf:resource="http://purl.uniprot.org/core/Protein"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/geneid:37191 -->
+
+<!--    <owl:NamedIndividual rdf:about="http://bio2rdf.org/geneid:37191">
+        <owl:sameAs rdf:resource="&lsld;Protein_A"/>
+    </owl:NamedIndividual>-->
+    
+
+
+    <!-- http://bio2rdf.org/go:0001586 -->
+
+    <owl:Thing rdf:about="http://bio2rdf.org/go:0001586">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Mitochondrion -->
+
+    <owl:NamedIndividual rdf:about="&lsld;Mitochondrion">
+        <rdf:type rdf:resource="&lsld;Organelle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Protein_A -->
+
+    <owl:NamedIndividual rdf:about="&lsld;Protein_A">
+        <rdf:type rdf:resource="&lsld;Protein"/>
+        <obo:BFO_0000056 rdf:resource="http://bio2rdf.org/go:0001586"/>
+        <part_of rdf:resource="&lsld;Mitochondrion"/>
+        <interacts_with rdf:resource="&lsld;Protein_B"/>
+	
+    <!-- Added by Mikel! Protege adds this triple above and Pubby does not show it  -->	
+	<owl:sameAs rdf:resource="http://bio2rdf.org/geneid:37191"/>
+	
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cbgp.upm.es/LSLD_example.owl#Protein_B -->
+
+    <owl:NamedIndividual rdf:about="&lsld;Protein_B">
+        <rdf:type rdf:resource="&lsld;Protein"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

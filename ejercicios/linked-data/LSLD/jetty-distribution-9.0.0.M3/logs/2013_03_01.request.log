@@ -1,0 +1,13 @@
+127.0.0.1 -  -  [01/Mar/2013:15:17:33 +0000] "GET /Protein_A HTTP/1.1" 303 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:33 +0000] "GET /page/Protein_A HTTP/1.1" 200 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:35 +0000] "GET /static/style.css HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:35 +0000] "GET /static/script.js HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:35 +0000] "GET /static/rdf-icon.gif HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:35 +0000] "GET /favicon.ico HTTP/1.1" 303 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:35 +0000] "GET /page/favicon.ico HTTP/1.1" 404 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /page/Protein_A HTTP/1.1" 200 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /static/style.css HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /static/script.js HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /static/rdf-icon.gif HTTP/1.1" 304 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /favicon.ico HTTP/1.1" 303 - 
+127.0.0.1 -  -  [01/Mar/2013:15:17:52 +0000] "GET /page/favicon.ico HTTP/1.1" 404 - 
