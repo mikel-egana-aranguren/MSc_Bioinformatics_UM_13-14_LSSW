@@ -164,12 +164,12 @@ Collaboratively</p><br>
 				<p align="left">(Obtener las proteinas mediante BioMart y luego usar onto-toolkit)</p><br>
 			</section>
 			
-			<section>
+			<!--<section>
 				<h3>Ontologías en Galaxy: Ejercicio 4</h3>
 				<br>
 				<p align="left">Performing term enrichment using an ontology subset</p><br>
 				
-			</section>
+			</section>-->
 			
 			
 			
@@ -462,8 +462,8 @@ Collaboratively</p><br>
 					<section>
 						<h3>OWL API</h3>
 						<br>
-						<p align="left">Ejercicio</p><br>
-						
+						<p align="left"><a href="http://owlapi.sourceforge.net/">http://owlapi.sourceforge.net/</a></p><br>
+						<p align="left"><a href="http://github.com/owlcs/owlapi">http://github.com/owlcs/owlapi</a></p><br>
 					</section>
 										
 				</section>
@@ -477,7 +477,7 @@ Collaboratively</p><br>
 				<h3>Video divulgativo</h3>
 				<br/>
 				<p>
-				<!--<iframe src="linked_data_1280x720.webm" width="750" height="421" frameborder="0"></iframe>-->
+				<iframe src="linked_data_1280x720.webm" width="750" height="421" frameborder="0"></iframe>
 				</p>	 
 			</section>
 			<section>
@@ -503,10 +503,10 @@ Collaboratively</p><br>
 						<h2>Principios LD</h2>
 						<br/>
 						<ol>
-							<li>Usar URIs para identificar entidades</li>
-							<li>Usar URIs HTTP para que se pueda acceder a esas entidades</li>
-							<li>Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
-							<li>Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
+							<li class="fragment roll-in">Usar URIs para identificar entidades</li>
+							<li class="fragment roll-in">Usar URIs HTTP para que se pueda acceder a esas entidades</li>
+							<li class="fragment roll-in">Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
+							<li class="fragment roll-in">Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
 						</ol>
 						<br/><br/>
 						<small><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></small><br>
@@ -694,10 +694,6 @@ Collaboratively</p><br>
 						<p align="left"><a href="http://www.w3.org/TR/rdf-primer/">RDF primer</a></p><br>
 						<p align="left"><a href="http://www.w3.org/RDF/Validator">RDF validator</a></p><br>		
 					</section>
-					<section>
-						<h3>Ejercicios RDFlib?</h3>
-						<br><br>		
-					</section>
 		</section>
 		<section>
 			<section>
@@ -732,66 +728,34 @@ Collaboratively</p><br>
 					<section>
 						<h3>SPARQL</h3>
 						<br><br>
-						<p align="left">Ejercicio práctico: <a href="http://linkedlifedata.com/sparql" target="_blank">http://linkedlifedata.com/sparql</a></p><br>	
-						<p align="left">Ejercicio práctico: <a href="http://www.semantic-systems-biology.org/biogateway/querying" target="_blank">BioGateway</a></p><br>	
+						<p align="left">Ejercicio práctico: <a href="http://linkedlifedata.com/sparql" target="_blank">http://linkedlifedata.com/sparql</a></p><br>		
 					</section>
-					<section>
-						<h3>SPARQL</h3>
-						<br><br>
-						<p align="left">Ejercicio práctico: <a href="http://miuras.inf.um.es/sparql" target="_blank">http://miuras.inf.um.es/sparql</a></p><br>
-						<p align="left">search for the human genetic diseases related to the gene Brca1 of the Mus musculus species stored in bio2rdf.org datasets</p><br>		
-					</section>
-					<section>
-						<h3>SPARQL</h3>
-						<br><br>						
-						<p align="left">
-						<small>
-						<code>
-						PREFIX ogolod: &lthttp://miuras.inf.um.es/ogolod/ontology/><br>
-						SELECT DISTINCT ?bio2rdf_omim ?title<br>
-						WHERE {<br>
-							?gene owl:sameAs &lthttp://bio2rdf.org/page/geneid:12189> .<br>
-							?cluster ogolod:hasOrtholog ?gene .<br>
-							?cluster ogolod:hasOrtholog ?ortholog .<br>
-							?disease ogolod:causedBy ?ortholog .<br>
-							?disease owl:sameAs ?bio2rdf_omim .<br>
-							?disease ogolod:Name ?title .<br>
-						}
-						</code>
-						</small>
-						</p><br>		
-					</section>
-					<section>
-						<h3>SPARQL</h3>
-						<br><br>
-						<p align="left">Ejercicio práctico: <a href="http://miuras.inf.um.es/sparql" target="_blank">http://miuras.inf.um.es/sparql</a></p><br>
-						<p align="left">orthologs related to genes involved in lung cancer and belonging to Rattus Norvegicus</p><br>		
-					</section>
-					<section>
-						<h3>SPARQL</h3>
-						<br><br>						
-						<p align="left">
-						<small>
-						<code>
-PREFIX ogolod: &lthttp://miuras.inf.um.es/ogolod/ontology/><br>
-PREFIX ogolodr: &lthttp://miuras.inf.um.es/ogolod/resource/><br>
-SELECT DISTINCT ?gene2<br>
-WHERE {<br>
-?ortholog ogolod:fromSpecies &lthttp://miuras.inf.um.es/ogolod/resource/NCBITaxon_10116/NCBITaxon_10116> .<br>
-?ortholog owl:sameAs ?gene2 .<br>
-?cluster ogolod:hasOrtholog ?gene .<br>
-?cluster ogolod:hasOrtholog ?ortholog .<br>
-?disease ogolod:causedBy ?gene .<br>
-?disease owl:sameAs &lthttp://bio2rdf.org/page/omim:211980> . <br>
-}
 
+					<section>
+						<h3>SPARQL queries federadas</h3>
+						
+						<br><br>
+						<p align="left">Get all protein catabolic processes (and more specific) in biomodels</p><br>
+						<p align="left">
+						<small>
+						<code>
+						SELECT ?go ?label <br>
+						WHERE {<br>
+						&nbsp;&nbsp;service &lthttp://bioportal.bio2rdf.org/sparql> {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:label ?label .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:subClassOf ?tgo .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;?tgo rdfs:label ?tlabel .<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;FILTER regex(?tlabel, "^protein catabolic process")<br>
+						&nbsp;&nbsp;}<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;service &lhttp://biomodels.bio2rdf.org/sparql> {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;?x &lhttp://bio2rdf.org/biopax_vocabulary:identical-to> ?go .<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;?x a &lhttp://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction> .<br>
+						  &nbsp;&nbsp;}<br>
+						}<br>
 						</code>
 						</small>
-						</p><br>		
-					</section>
-					<section>
-						<h3>SPARQL federadas, stardog?</h3>
-	
+						</p>
+						<small><a href="http://www.slideshare.net/micheldumontier/powering-scientific-discovery-with-the-semantic-web-vanbug-2014">Michel Dumontier at Slide Share</a></small>
 					</section>
 		</section>
 		<section>
@@ -810,8 +774,7 @@ WHERE {<br>
 						<br />
 						<p align="left">Solo recibiremos los triples de ese triple store 
 						(¡Pero nosotros o nuestro agente automático podemos seguir los enlaces! "Follow your nose")</p><br>
-						<p align="left">Alternativa: federated queries (<a href="http://www.w3.org/TR/sparql11-federated-query/">http://www.w3.org/TR/sparql11-federated-query/</a>)</p>
-						<!--<img src="Federated.png" align="right">-->
+						<p align="left">(Queries federadas*)</p>
 					</section>
 					
 					<section>
@@ -1004,85 +967,23 @@ WHERE {<br>
 							<p align="left"><a href="http://wifo5-03.informatik.uni-mannheim.de/pubby/">Pubby</a>: negociacion contenido etc.</p>
 					</section>
 					
-<!--					<section>
+					<section>
 						<h3>Life Sciences Linked Data</h3>
 						<br/>
-						<p align="left">Probar con el dataset por defecto</p>	
+						<p align="left">Probar con el dataset por defecto en biomaster.atica.um.es</p>	
 						<br/>
-						<p align="left">Instrucciones: life-sciences-linked-data/LSLD/README, "Standard running"</p>					
+						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset</a></p>					
 												
 					</section>
 					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>
-						<span style="font-size: smaller;">
-						<ul>
-							<li><code>/jena-fuseki-0.2.6-SNAPSHOT</code></li>
-							<li><code>chmod +x fuseki-server s-*</code></li>
-							<li><code>./fuseki-server --update --mem /ds</code></li>
-							<hr align="center" width="100%" noshade="noshade" />
-							<li><code>./s-put http://localhost:3030/ds/data default Data/books.ttl</code></li>
-						</ul>
-						</span>
-					</section>
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>
-						<span style="font-size: smaller;">
-						<ul>
-							<li><code>jetty-distribution-9.0.0.M3/webapps/ROOT/WEB-INF/web.xml</code></li>
-							<img src="pubby_xml.png">
-							<br>
-							<li><code>/jetty-distribution-9.0.0.M3</code></li>
-							<li><code>java -jar start.jar jetty.port=8080</code></li>
-							<li><a href="http://localhost:8080/book1">http://localhost:8080/book1</a></li>
-						</ul>
-						</span>
-					</section>
+
 
 					<section>
 						<h3>Life Sciences Linked Data</h3>
 						<br/>			
-						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD </p>
-						<br/>
-						<p align="left">Instrucciones: life-sciences-linked-data/LSLD/README, "Using a different dataset"</p>
-					</section>-->
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>
-						<span style="font-size: smaller;">
-						<ol>
-							<li><code>/jena-fuseki-0.2.6-SNAPSHOT</code></li>
-							<li><code>mkdir lslddb</code></li>
-							<li><code>./fuseki-server --port=3030 --update --loc=./lslddb /dataset</code></li>
-							<hr align="center" width="100%" noshade="noshade" />
-							<li><code>./s-put http://localhost:3030/dataset/data lsld Data/LSLD_example.owl</code></li>
-						</ol>
-						</span>
-					</section>
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>
-						<span style="font-size: smaller;">
-						<ul>
-							<li><code>jetty-distribution-9.0.0.M3/webapps/ROOT/WEB-INF/web.xml</code></li>
-							<img src="pubby_xml_2.png">
-							<br>
-							<li><code>/jetty-distribution-9.0.0.M3</code></li>
-							<li><code>java -jar start.jar jetty.port=8080</code></li>
-							<li><a href="http://localhost:8080/Protein_A">http://localhost:8080/Protein_A</a></li>
-						</ul>
-						</span>
-					</section>
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>
-						<p align="left">!!! Cada pareja tiene dos puertos asignados !!!</p><br/>
+						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD biomaster.atica.um.es</p><br/>
+						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset</a></p><br/>
+						<p align="left">¡Cada pareja tiene dos puertos asignados!¿Dónde hay que configurarlo?</p><br/>
 					</section>
 					
 					<section>
@@ -1103,50 +1004,7 @@ WHERE {<br>
 						<p align="left">Inferencia con P4: materializar triples ...</p>
 					</section>
 					
-					<section>
-						<h3>Programación para LD</h3>
-						<br/>
-						<p align="left">Generar RDF con Jena </p>
-						<br>						
-						<p align="left">
-							<pre>
-Model model = ModelFactory.createDefaultModel();
-
-Resource prot_a = model.createResource("http://cbgp.upm.es/lsld.rdf#prot_a");
-
-Resource cell_cycle = model.createResource("http://cbgp.upm.es/lsld.rdf#cell_cycle");
-
-Property participates_in = model.createProperty("http://cbgp.upm.es/lsld.rdf#participates_in");
-
-model.add(prot_a, participates_in,cell_cycle);
-
-model.write(System.out);							
-							</pre>						
-						</p>
-					</section>
-					<section>
-						<h3>Aplicaciones Linked Data</h3>
-						<br/>
-						<p align="left">Consulta SPARQL endpoint con JENA (Juan F. Sequeda) </p>
-						<br>						
-						<p align="left">
-							<pre>
-import com.hp.hpl.jena.query.*;
-
-String service = "..."; // address of the SPARQL endpoint 
-String query = "SELECT ..."; // your SPARQL query 
-QueryExecution e = QueryExecutionFactory.sparqlService(service, query)
-
-ResultSet results = e.execSelect(); 
-while ( results.hasNext() ) {
-		QuerySolution s = results.nextSolution(); 
-		// ...
-} 
-
-e.close();							
-							</pre>						
-						</p>
-					</section>
+					
 					<section>
 						<h3>Sumario herramientas para LD</h3>
 						<br />
@@ -1170,19 +1028,29 @@ e.close();
 			<section>
 				<h3>SADI</h3>
 				<br>						
-						<p align="left">SADI ... </p>
-						<br>
+						<p align="left">SADI: Semantic Automated Discovery and Integration</p><br>
+						<p align="left"><a href="http://code.google.com/p/sadi/">http://code.google.com/p/sadi/</a></p><br>
 			</section>
 			<section>
 				<h3>SADI</h3>
 				
 				<img  src="SADI.jpg" alt="SADI.jpg">
 			</section>
+			<section>
+				<h3>SADI ejercicio 1</h3>
+				
+				<p align="left">Crear un servicio SADI</p><br>
+			</section>
+			<section>
+				<h3>SADI ejercicio 2</h3>
+				
+				<p align="left">Unir varios servicios SADI mediante SADI-Galaxy</p><br>
+			</section>
 		</section>
 		<section>
 				<section>
 						<br><br><br><br>
-						<h2>Más información, agradecimientos, etc.</h2>
+						<h2>Más información</h2>
 					</section>
 					<section>
 						<h3>Más información</h3>
@@ -1200,32 +1068,9 @@ e.close();
 					<section>
 															<h3>Más información</h3>
 						<br><br>	
-						<p align="left">José Antonio Miñarro-Giménez, Mikel Egaña Aranguren, Boris Villazón-Terrazas and Jesualdo Tomás Fernández-Breis. 
-						Publishing Orthology and Diseases Information in the Linked Open Data cloud.<em> Current Bioinformatics</em> 2012, 7 (3), 255-266. 
-						[<a href="http://www.benthamscience.com/contents-JCode-CBIO-Vol-00000007-Iss-00000003.htm">Bentham science</a>]
-						[<a href="http://mikeleganaaranguren.files.wordpress.com/2013/01/currentbioinformatics-ogolod.pdf">pdf</a>]</p>	<br>				
+						<p align="left"><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a> (O'Reilly)</p>	<br>				
     					<p align="left"><a href="http://patterns.dataincubator.org/book/">Linked Data Patterns</a></p>
-
 					</section>
-					<section>
-						<h3>Inspiración</h3>
-						<br><br>
-							<ul>
-								<li><a href="">Ontology engineering Group (UPM)</a>: Raúl García Castro</li>	
-								<li><a href="">Bioinformatics and Semantic Web Group</a>, University of Texas: Juan F. Sequeda</li>						
-								<li><a href="">Isoco</a>: Boris Villazón Terrazas</li>	
-								<li><a href="">Biological Informatics Group (CBGP, UPM)</a>: Mark Wilkinson</li>
-								<li><a href="http://linkeddatabook.com/editions/1.0/">Linked Data</a>: Evolving the Web into a Global Data Space 
-						(Christian Bizer, Tom Heath) </li>
-							</ul>							
-					</section>
-					<section>
-						<h3>Estructura de la presentación</h3>
-						<br><br>
-					   <p align="center"><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></p>
-													
-					</section>
-		
 			</section>
 		
 		</div>
