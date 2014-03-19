@@ -1,0 +1,3 @@
+<http://sadiframework.org/examples/hello-input.rdf#1>
+    <http://xmlns.com/foaf/0.1/name> "Guy Incognito";
+    a <http://sadiframework.org/examples/hello.owl#NamedIndividual>.

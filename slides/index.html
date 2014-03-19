@@ -128,13 +128,14 @@ Collaboratively</p><br>
 				<h3>ONTO-PERL: Ejercicio 1</h3>
 				<br>
 				<p align="left">Crear un script que devuelva los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology</p><br>
-				<p align="left">Usar los archivos gene_association.tair y go.obo</p><br>
+				<p align="left">(Usar los archivos /ejercicios/onto-perl/gene_association.tair y /ejercicios/onto-perl/go.obo)</p><br>
 			</section>
 			
 			<section>
 				<h3>ONTO-PERL: Ejercicio 2</h3>
 				<br>
 				<p align="left">Crear un script que, dados los terminos de GO GO:0030685 y GO:0000800, obtenga los ancestros comunes de ambos </p>
+				<p align="left">(Usar /ejercicios/onto-perl/go.obo)</p><br>
 				<img  src="1471-2105-11-S12-S8-2.jpg" alt="1471-2105-11-S12-S8-2.jpg">
 			</section>
 			
@@ -142,37 +143,34 @@ Collaboratively</p><br>
 				<h3>Ontologías en Galaxy</h3>
 				<br/>
 				<img  src="ontology_tool_shed.png" alt="ontology_tool_shed.png"><br><br>
-				<p align="center"><a href="http://biomaster.atica.um.es:8080">http://biomaster.atica.um.es:8080</a></p><br>
 			</section>
 			
 			<section>
 				<h3>Ontologías en Galaxy: Ejercicio 1</h3>
 				<br>
 				<p align="left">Usando onto-toolkit, encontrar los genes de Arabidopsis thaliana que están anotados en el arbol ciclo celular (GO:0007049) de Gene Ontology, y crear un workflow</p><br>
+				<p align="center">(<a href="http://sele.inf.um.es:8080/">http://sele.inf.um.es:8080/</a>)</p><br>
+				<p align="left">(Subir los archivos /ejercicios/onto-perl/gene_association.tair y /ejercicios/onto-perl/go.obo)</p><br>
 				<p align="left">(Hay que eliminar las lineas que empiezan por "!" del archivo gene_association.tair y convertir los tabs a columnas)</p><br>
+				
+				
 			</section>
 			<section>
 				<h3>Ontologías en Galaxy: Ejercicio 2</h3>
 				<br>
 				<p align="left">Usando onto-toolkit, encontrar los ancestros comunes de GO GO:0030685 y GO:0000800, y crear un workflow</p><br>
+				<p align="center">(<a href="http://biomaster.atica.um.es:8080">http://biomaster.atica.um.es:8080</a>)</p><br>
+				<p align="left">(Subir los archivos /ejercicios/onto-perl/gene_association.tair y /ejercicios/onto-perl/go.obo)</p><br>
 			</section>
 			
 			<section>
 				<h3>Ontologías en Galaxy: Ejercicio 3</h3>
 				<br>
 				<p align="left">Identificar que terminos GO tienen en comun las proteinas JUN (UniProt ID: P05412) y FOS (UniProt ID: P01100) y crear un workflow</p><br>
+				<p align="center">(<a href="http://biomaster.atica.um.es:8080">http://biomaster.atica.um.es:8080</a>)</p><br>
 				<p align="left">(Obtener las proteinas mediante BioMart y luego usar onto-toolkit)</p><br>
+				<p align="left">(Copiar go.obo en una historia nueva)</p><br>
 			</section>
-			
-			<!--<section>
-				<h3>Ontologías en Galaxy: Ejercicio 4</h3>
-				<br>
-				<p align="left">Performing term enrichment using an ontology subset</p><br>
-				
-			</section>-->
-			
-			
-			
 			
 		</section>
 		<section>
@@ -468,127 +466,7 @@ Collaboratively</p><br>
 										
 				</section>
 		
-		<section>
-			<section>
-				<br><br><br><br>
-				<h2>Linked Data</h2>
-			</section>
-			<section>
-				<h3>Video divulgativo</h3>
-				<br/>
-				<p>
-				<iframe src="linked_data_1280x720.webm" width="750" height="421" frameborder="0"></iframe>
-				</p>	 
-			</section>
-			<section>
-				<h3>¿Qué es Linked Data (LD)?</h3>
-				<br>
-				<p align="left">Un método para ofrecer datos directamente en la web</p><br>
-				<p align="left">Una propuesta del <a href="http://www.w3.org">W3C</a>: 
-				<a href="http://www.w3.org/standards/semanticweb/data">http://www.w3.org/standards/semanticweb/data</a></p><br>
-			</section>
-			<section>
-				<h3>Un primer paso hacia la Web Semántica</h3>
-				<br/>
-					<p align="left">LD utiliza la tecnología <i>ya existente</i> (URI, HTTP, ...) 
-						para ofrecer una primera versión de la Web Semántica</p>
-			</section>
-			<section>
-			<h3>Pila tecnologías Web Semántica y LD</h3>
-				<br/>
-				<img src="semantic_web_technology_stack_small.png">
-				<p align="right"><small><a href="http://bnode.org/blog/2009/07/08/the-semantic-web-not-a-piece-of-cake">BNODE</a></small></p>
-			</section>
-			<section>
-						<h2>Principios LD</h2>
-						<br/>
-						<ol>
-							<li class="fragment roll-in">Usar URIs para identificar entidades</li>
-							<li class="fragment roll-in">Usar URIs HTTP para que se pueda acceder a esas entidades</li>
-							<li class="fragment roll-in">Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
-							<li class="fragment roll-in">Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
-						</ol>
-						<br/><br/>
-						<small><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></small><br>
-			</section>
-					
-			<section>
-						<h3>Con LD publicamos datos de manera ... </h3>
-						<br/>
-						<h3>... semántica</h3>
-						<br/>
-						<h3>... enlazada </h3>
-			</section>
-			<section>
-						<h3>Semántica</h3>
-						<br/>
-						<p align="left">RDF ofrece el triple, un modelo de datos explícito y homogéneo: una "frase" estándar que los ordenadores pueden "entender"</p>
-						<br/>
-						
-							<img width="600" height="300" src="Triple.png" alt="Triple.png">
-						
-			</section>
-			<section>
-						<h3>Enlaces</h3>
-						<br/>
-						<p align="left">En el triple, cada entidad (sujeto, predicado, objeto) tiene una URI que lo identifica</p>
-						<p align="left">Los datos son enlazados a otros datos a través de la web, con enlaces explícitos</p>
-						<br/>
-						
-							<img src="Links.png" alt="Links.png">
-						
-			</section>
-			<section>
-						<h3>Red global de datos enlazados</h3>
-						<br/>
-						<img  src="Red.png" alt="Red.png">
-			</section>
-			<section>
-						<h3>Red global de datos enlazados</h3>
-						<br>
-												
-						<p align="left">Internet de datos, en vez de documentos: "Base de Datos universal":<br>
-								<ul>
-										<li>Es más fácil construir aplicaciones que exploten los datos, incluyendo razonamiento automático</li>
-										<li>Encontramos justo lo que buscamos: consultas directas (SPARQL) en vez de procesar texto</li>										
-								</ul>					
-						</p>
-			</section>
-					
-			<section>
-						<h3>Red global de datos enlazados</h3>
-						<br><br>
-						<p align="left">Navegamos directamente por las datos (RDF), en vez de navegar a través de documentos que representan esos datos en lenguaje natural (HTML)</p><br>
-						<p align="left">Enlazar datos nuevos es tan fácil como enlazar páginas web: crecimiento orgánico de la red</p>
-			</section>	
-			<section>
-						<h3>Linked Open Data (LOD) cloud</h3>
-						<br/>
-						<img  src="lod-datasets_2011-09-19_colored.svg" alt="lod-datasets_2011-09-19_colored.svg">
-						<br/><br/>
-						<small><a href="http://richard.cyganiak.de/2007/10/lod/lod-datasets_2011-09-19_colored.svg" >http://richard.cyganiak.de/2007/10/lod/</a></small>
-			</section>
-					
-			<section>
-						<h3>Datasets de interés</h3>
-						<br /><br />
-						<ul>
-								<li><a href="http://bio2rdf.org/">Bio2RDF</a></li>
 
-								<li><a href="http://miuras.inf.um.es/~ogo/ogolod.html">OGOLOD</a> (¡UM!)</li>
-
-								<li><a href="http://linkedlifedata.com/">LinkedLifeData</a></li>
-
-								<li><a href="http://semanticscience.org/projects/hyque/index.html">HyQue</a>*</li>
-
-								<li><a href="http://www.ebi.ac.uk/arrayexpress/">ArrayExpress and Gene expression atlas</a>*</li>
-								
-								<li><a href="http://www.uniprot.org/">UniProt</a></li>
-								
-								<li>LOD cloud ...</li>
-						</ul>
-			</section>
-		</section>
 		<section>
 			<section>
 				<br><br><br><br>
@@ -638,8 +516,8 @@ Collaboratively</p><br>
 						<br>
 						<p align="left">Cada recurso (Sujeto, predicado, objeto) tiene una URI</p><br>
 						<p align="left">URI: Uniform Resource Identifier (<a href="http://tools.ietf.org/html/rfc3986">RFC3986</a>)</p><br>
-						<p align="left">Reference URI: URI + fragment (http://foo/bar#frag)</p>
-						<p align="left"><small>(En Linked Data, las URIs se pueden <i>resolver</i>, es decir <i>de-referenciar</i>)</small></p>
+						<!--<p align="left">Reference URI: URI + fragment (http://foo/bar#frag)</p>
+						<p align="left"><small>(En Linked Data, las URIs se pueden <i>resolver</i>, es decir <i>de-referenciar</i>)</small></p>-->
 					</section>
 					<section>
 						<h3>Espacios de nombres XML</h3>
@@ -761,8 +639,125 @@ Collaboratively</p><br>
 		<section>
 			<section>
 					<br><br><br><br>
-						<h2>Cómo funciona Linked Data</h2>
+						<h2>Linked Data</h2>
 					</section>
+					
+			<section>
+				<h3>Video divulgativo</h3>
+				<br>
+				 <video width="888" height="500" controls>
+				  <source src="linked_data_1280x720.webm" type="video/webm">
+				  Your browser does not support the video tag.
+				</video>  
+			</section>
+			<section>
+				<h3>¿Qué es Linked Data (LD)?</h3>
+				<br>
+				<p align="left">Un método para ofrecer datos directamente en la web</p><br>
+				<p align="left">Una propuesta del <a href="http://www.w3.org">W3C</a>: 
+				<a href="http://www.w3.org/standards/semanticweb/data">http://www.w3.org/standards/semanticweb/data</a></p><br>
+			</section>
+			<section>
+				<h3>Un primer paso hacia la Web Semántica</h3>
+				<br/>
+					<p align="left">LD utiliza la tecnología <i>ya existente</i> (URI, HTTP, ...) 
+						para ofrecer una primera versión de la Web Semántica</p>
+			</section>
+			<section>
+			<h3>Pila tecnologías Web Semántica y LD</h3>
+				<br/>
+				<img src="semantic_web_technology_stack_small.png">
+				<p align="right"><small><a href="http://bnode.org/blog/2009/07/08/the-semantic-web-not-a-piece-of-cake">BNODE</a></small></p>
+			</section>
+			<section>
+						<h2>Principios LD</h2>
+						<br/>
+						<ol>
+							<li class="fragment roll-in">Usar URIs para identificar entidades</li>
+							<li class="fragment roll-in">Usar URIs HTTP para que se pueda acceder a esas entidades</li>
+							<li class="fragment roll-in">Cuando un usuario o agente accede a una URI, proveer información útil mediante estándares (RDF, SPARQL)</li>
+							<li class="fragment roll-in">Incluir enlaces a otras URIs para que se puedan descubrir más entidades</li>
+						</ol>
+						<br/><br/>
+						<small><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></small><br>
+			</section>
+					
+			<section>
+						<h3>Con LD publicamos datos de manera ... </h3>
+						<br/>
+						<h3>... semántica</h3>
+						<br/>
+						<h3>... enlazada </h3>
+			</section>
+			<section>
+						<h3>Semántica</h3>
+						<br/>
+						<p align="left">RDF ofrece el triple, un modelo de datos explícito y homogéneo: una "frase" estándar que los ordenadores pueden "entender"</p>
+						<br/>
+						
+							<img width="600" height="300" src="Triple.png" alt="Triple.png">
+						
+			</section>
+			<section>
+						<h3>Enlaces</h3>
+						<br/>
+						<p align="left">En el triple, cada entidad (sujeto, predicado, objeto) tiene una URI que lo identifica</p>
+						<p align="left">Los datos son enlazados a otros datos a través de la web, con enlaces explícitos</p>
+						<br/>
+						
+							<img src="Links.png" alt="Links.png">
+						
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br/>
+						<img  src="Red.png" alt="Red.png">
+			</section>
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br>
+												
+						<p align="left">Internet de datos, en vez de documentos: "Base de Datos universal":<br>
+								<ul>
+										<li>Es más fácil construir aplicaciones que exploten los datos, incluyendo razonamiento automático</li>
+										<li>Encontramos justo lo que buscamos: consultas directas (SPARQL) en vez de procesar texto</li>										
+								</ul>					
+						</p>
+			</section>
+					
+			<section>
+						<h3>Red global de datos enlazados</h3>
+						<br><br>
+						<p align="left">Navegamos directamente por las datos (RDF), en vez de navegar a través de documentos que representan esos datos en lenguaje natural (HTML)</p><br>
+						<p align="left">Enlazar datos nuevos es tan fácil como enlazar páginas web: crecimiento orgánico de la red</p>
+			</section>	
+			<section>
+						<h3>Linked Open Data (LOD) cloud</h3>
+						<br/>
+						<img  src="lod-datasets_2011-09-19_colored.svg" alt="lod-datasets_2011-09-19_colored.svg">
+						<br/><br/>
+						<small><a href="http://richard.cyganiak.de/2007/10/lod/lod-datasets_2011-09-19_colored.svg" >http://richard.cyganiak.de/2007/10/lod/</a></small>
+			</section>
+					
+			<section>
+						<h3>Datasets de interés</h3>
+						<br /><br />
+						<ul>
+								<li><a href="http://bio2rdf.org/">Bio2RDF</a></li>
+
+								<li><a href="http://miuras.inf.um.es/~ogo/ogolod.html">OGOLOD</a> (¡UM!)</li>
+
+								<li><a href="http://linkedlifedata.com/">LinkedLifeData</a></li>
+
+								<li><a href="http://semanticscience.org/projects/hyque/index.html">HyQue</a>*</li>
+
+								<li><a href="http://www.ebi.ac.uk/arrayexpress/">ArrayExpress and Gene expression atlas</a>*</li>
+								
+								<li><a href="http://www.uniprot.org/">UniProt</a></li>
+								
+								<li>LOD cloud ...</li>
+						</ul>
+			</section>
 					<section>
 						<h3>Grafos y triple stores</h3>
 						<br/>
@@ -770,11 +765,17 @@ Collaboratively</p><br>
 							<img src="GrafTripleStore.png" alt="GrafTripleStore.png">	
 					</section>
 					<section>
-						<h3>Consultas</h3>
+						<h3>Grafos y triple stores</h3>
 						<br />
 						<p align="left">Solo recibiremos los triples de ese triple store 
 						(¡Pero nosotros o nuestro agente automático podemos seguir los enlaces! "Follow your nose")</p><br>
-						<p align="left">(Queries federadas*)</p>
+					</section>
+					<section>
+						<h3>URIs/URLs en Linked Data</h3>
+						<br/>
+						<p align="left">URI identifica a la entidad; URLs identifican (localizan!) diferentes representaciones (RDF, HTML, ...) de la entidad</p><br/>
+						<p align="left">Descripción de la entidad (RDF, HTML, ...) &#8800; entidad</p><br/>
+						<p align="left">HTTP URIs dereferenciable (URLs): cuando se busca una URI, deberia devolver una descripción adecuada del objeto que identifica esa URI</p><br/>
 					</section>
 					
 					<section>
@@ -795,12 +796,23 @@ Collaboratively</p><br>
 							<img src="ContentNegotation3.png" alt="ContentNegotation3.png">
 					</section>
 											
+					
 					<section>
-						<h3>Diseño URIs</h3>
+						<h3>303 URIs vs Hash URIs</h3>
 						<br/>
-						<p align="left">HTTP URIs dereferenciables: cuando se busca una URI, deberia devolver una descripción del objeto que identifica esa URI</p><br/>
-						<p align="left">Descripción del objeto (documento RDF) &#8800; objeto</p><br/>
-						<p align="left"><a href="http://linkeddatabook.com/editions/1.0/#htoc11">303 URIs vs Hash URIs</a></p>
+						<p align="left"><a href="http://linkeddatabook.com/editions/1.0/#htoc11">http://linkeddatabook.com/editions/1.0/#htoc11</a></p>
+					</section>
+					<section>
+						<h3>303 URIs</h3>
+						<br/>
+						<img src="303.png" alt="303.png"><br>
+						<p><small><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a></small></p>
+					</section>
+					<section>
+						<h3>Hash URIs</h3>
+						<br/>
+						<img src="fragment.png" alt="fragment.png"><br>
+						<p><small><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a></small></p>
 					</section>
 					<section>
 						<h3>Diseño URIs</h3>
@@ -1038,14 +1050,12 @@ Collaboratively</p><br>
 			</section>
 			<section>
 				<h3>SADI ejercicio 1</h3>
-				
-				<p align="left">Crear un servicio SADI</p><br>
+				<br>
+				<p align="left">Crear un servicio SADI en Python (en uno de los puertos asignados)</p><br>
+				<p align="left"><a href="http://code.google.com/p/sadi/wiki/BuildingServicesInPython">http://code.google.com/p/sadi/wiki/BuildingServicesInPython</a> 
+				(<a href="http://code.google.com/p/sadi/wiki/BuildingServicesInPython#Creating_the_Python_SADI_service">Creating_the_Python_SADI_service</a>)</p>
 			</section>
-			<section>
-				<h3>SADI ejercicio 2</h3>
-				
-				<p align="left">Unir varios servicios SADI mediante SADI-Galaxy</p><br>
-			</section>
+			
 		</section>
 		<section>
 				<section>
@@ -1061,9 +1071,6 @@ Collaboratively</p><br>
 						(Christian Bizer, Tom Heath)</p> <br>
 						<p align="left">Semantic Web Health Care and Life Sciences Interest Group (<a href="http://www.w3.org/blog/hcls">W3C HCLS IG</a>): 
 						<a href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/">Health Care and Life Science (HCLS) Linked Data Guide</a></p> 
-						
-						programming the smeantic web
-						
 					</section>
 					<section>
 															<h3>Más información</h3>
