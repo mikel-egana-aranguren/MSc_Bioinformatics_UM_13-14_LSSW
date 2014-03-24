@@ -995,7 +995,21 @@ Collaboratively</p><br>
 						<br/>			
 						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD biomaster.atica.um.es</p><br/>
 						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset</a></p><br/>
-						<p align="left">¡Cada pareja tiene dos puertos asignados!¿Dónde hay que configurarlo?</p><br/>
+					</section>
+					
+					
+					<section>
+						<h3>Life Sciences Linked Data</h3>
+						<br/>		
+						<ul>
+							<li class="fragment roll-in">Cada pareja tiene dos puertos asignados</li>
+							<li class="fragment roll-in"><del>localhost</del> http://biomaster.atica.um.es/</li>
+							<li class="fragment roll-in">Invocar Fuseki en otro puerto (<a href="http://jena.apache.org/documentation/serving_data/">doc</a>)</li>
+							<li class="fragment roll-in">ejecutar s-put en otro dominio/puerto</li>
+							<li class="fragment roll-in">Editar web.xml para que apunte a lsld-toy-config-file.ttl</li>
+							<li class="fragment roll-in">Editar lsld-toy-config-file.ttl en 3 sitios (dominio/puerto)</li>
+							<li class="fragment roll-in">Ejecutar jetty en un dominio differente</li>
+						</ul>
 					</section>
 					
 					<section>
@@ -1005,7 +1019,7 @@ Collaboratively</p><br>
 						<br>						
 						<p align="left">Con enlaces a otros datasets</p>
 						<br>						
-						<p align="left">Publicar el dataset en localhost (Usar "Using a different dataset" como guía)</p>
+						<p align="left">Publicar el dataset en localhost</p>
 					</section>
 					
 					<section>
